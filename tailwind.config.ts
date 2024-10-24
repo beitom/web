@@ -1,6 +1,8 @@
 import type { Config } from "tailwindcss"
 import { fontFamily } from "tailwindcss/defaultTheme"
 
+const { default: flattenColorPalette } = require("tailwindcss/lib/util/flattenColorPalette")
+
 const config = {
   darkMode: ["class"],
   content: {
@@ -11,7 +13,7 @@ const config = {
   prefix: "",
   theme: {
     container: {
-      center: "true",
+      center: true,
       padding: "2rem",
       screens: {
         "2xl": "1400px"
@@ -69,6 +71,14 @@ const config = {
         sm: "calc(var(--radius) - 4px)"
       },
       keyframes: {
+        aurora: {
+          from: {
+            backgroundPosition: "50% 50%, 50% 50%"
+          },
+          to: {
+            backgroundPosition: "350% 50%, 350% 50%"
+          }
+        },
         "accordion-down": {
           from: {
             height: "0"
@@ -154,6 +164,7 @@ const config = {
         }
       },
       animation: {
+        aurora: "aurora 60s linear infinite",
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "border-beam": "border-beam calc(var(--duration)*1s) infinite linear",
@@ -168,7 +179,16 @@ const config = {
     }
   },
   safelist: ["!duration-[0ms]", "!delay-[0ms]", 'html.js :where([class*="taos:"]:not(.taos-init))'],
-  plugins: [require("tailwindcss-animate"), require("taos/plugin")]
+  plugins: [require("tailwindcss-animate"), require("taos/plugin"), addVariablesForColors]
 } satisfies Config
+
+function addVariablesForColors({ addBase, theme }: any) {
+  let allColors = flattenColorPalette(theme("colors"))
+  let newVars = Object.fromEntries(Object.entries(allColors).map(([key, val]) => [`--${key}`, val]))
+
+  addBase({
+    ":root": newVars
+  })
+}
 
 export default config

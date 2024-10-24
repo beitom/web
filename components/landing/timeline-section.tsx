@@ -13,6 +13,7 @@ export function BeitTimeline() {
   const data = [
     {
       title: "Founding",
+      date: "Jan 2017",
       content: (
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 font-normal mb-8">
@@ -66,6 +67,7 @@ export function BeitTimeline() {
     },
     {
       title: "Creative Destruction Lab",
+      date: "June 2019",
       content: (
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 font-normal mb-8">
@@ -78,6 +80,7 @@ export function BeitTimeline() {
     },
     {
       title: "Pre Seed",
+      date: "Sept 2019",
       content: (
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 font-normal mb-8">
@@ -94,6 +97,7 @@ export function BeitTimeline() {
     },
     {
       title: "Quantum Advantage Breakthrough",
+      date: "Oct 2020",
       content: (
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 font-normal mb-8">
@@ -108,6 +112,7 @@ export function BeitTimeline() {
     },
     {
       title: "European Innovation Council Grant",
+      date: "March 2023",
       content: (
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 font-normal mb-8">
@@ -125,6 +130,7 @@ export function BeitTimeline() {
     },
     {
       title: "Seed Round",
+      date: "June 2023",
       content: (
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 font-normal mb-8">
@@ -140,7 +146,8 @@ export function BeitTimeline() {
       )
     },
     {
-      title: "US Expansion",
+      title: "Washington Office Opens",
+      date: "Sept 2023",
       content: (
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 font-normal mb-8">
@@ -151,7 +158,8 @@ export function BeitTimeline() {
       )
     },
     {
-      title: "Canada Expansion",
+      title: "Toronto Office Opens",
+      date: "Oct 2023",
       content: (
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 font-normal mb-8">
@@ -168,8 +176,9 @@ export function BeitTimeline() {
     }
   ]
   return (
-    <div className="w-full">
+    <section className="container mx-auto px-4 lg:px-8 py-16">
+      <h1 className="text-4xl font-bold text-white text-center">Milestones</h1>
       <Timeline data={data} />
-    </div>
+    </section>
   )
 }

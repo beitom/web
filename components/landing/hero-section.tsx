@@ -1,18 +1,14 @@
 "use client"
 
 import { ArrowRightIcon } from "@radix-ui/react-icons"
-import { useInView } from "framer-motion"
-import { useRef } from "react"
+
 import TextShimmer from "@/components/ui/text-shimmer"
 import { Button } from "@/components/ui/button"
 import AnimatedGradientText from "../ui/animated-gradient-text"
 import { cn } from "../../lib/utils"
 import { ChevronRight } from "lucide-react"
-import { BorderBeam } from "../ui/border-beam"
 
 export default function HeroSection() {
-  const ref = useRef(null)
-  const inView = useInView(ref, { once: true, margin: "-100px" })
   return (
     <section id="hero" className="relative mx-auto mt-32 max-w-7xl px-6 text-center md:px-8">
       <div className="animate-fade-in">
@@ -42,8 +38,8 @@ export default function HeroSection() {
       </p>
 
       <Button
-        variant="default"
-        className="animate-fade-in -translate-y-4 gap-1 opacity-0 ease-in-out [--animation-delay:600ms]"
+        variant="ghost"
+        className="animate-fade-in -translate-y-4 gap-1 opacity-0 ease-in-out [--animation-delay:600ms] text-white"
       >
         <span>Discover Our Solutions</span>
 
