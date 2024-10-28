@@ -6,10 +6,8 @@ import React from "react"
 import { BeitTimeline } from "@/components/landing/timeline-section"
 import LearnMoreSection from "@/components/landing/learnmore-section"
 import { motion } from "framer-motion"
-import { AuroraBackground } from "@/components/ui/aurora-background"
 import { LayoutGridDemo } from "../../components/landing/technologies-section"
-import { WavyBackground } from "../../components/ui/wavy-background"
-import Particles from "../../components/ui/particles"
+import ParticlesBackground from "@/components/particles"
 
 export default function Page() {
   const animationSettings = {
@@ -21,25 +19,34 @@ export default function Page() {
 
   return (
     <>
-      {/*<div className="bg-gradient-to-b to-transparent from-zinc-900 absolute h-screen top-0 left-0 w-full" />*/}
-      {/*<AuroraBackground>*/}
-      <HeroSection />
-      <SphereMask />
-      {/*</AuroraBackground>*/}
+      <div className="absolute inset-0 bg-gradient-to-b from-blue-950 from-5% to-transparent z-[-3]"></div>
+      {/* Hero Section Wrapper */}
+      <div className="relative w-full h-screen overflow-hidden">
+        {/* Background iframe */}
+        {/* Hero Section */}
+        <div className="absolute inset-0 z-[-2]">
+          <ParticlesBackground />
+        </div>
 
-      {/* Learn More Section */}
-      {/**/}
+        {/* Backdrop Blur Layer */}
+        <div className="absolute inset-0 backdrop-blur-[4px] z-[-1] pointer-events-none"></div>
+        <div className="flex items-center justify-center h-full relative z-10">
+          <div>
+            <HeroSection />
+            <SphereMask />
+          </div>
+        </div>
+      </div>
+
+      {/* Other Sections */}
       <motion.div {...animationSettings}>
         <LearnMoreSection />
       </motion.div>
-      {/*</div>*/}
 
-      {/* Technologies Section */}
       <motion.div {...animationSettings}>
         <LayoutGridDemo />
       </motion.div>
 
-      {/* Beit Timeline Section */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -48,15 +55,6 @@ export default function Page() {
       >
         <BeitTimeline />
       </motion.div>
-
-      <Particles
-        className="absolute inset-0 -z-10"
-        quantity={500}
-        ease={70}
-        size={0.05}
-        staticity={10}
-        color="#48cae4"
-      />
     </>
   )
 }
