@@ -7,10 +7,11 @@ import { Button } from "@/components/ui/button"
 import AnimatedGradientText from "../ui/animated-gradient-text"
 import { cn } from "../../lib/utils"
 import { ChevronRight } from "lucide-react"
+import Link from "next/link"
 
 export default function HeroSection() {
   return (
-    <section id="hero" className="relative mx-auto mt-32 max-w-7xl px-6 text-center md:px-8">
+    <section id="hero" className="relative mx-auto mt-32 lg:mt-64 max-w-7xl px-6 text-center md:px-8">
       <div className="animate-fade-in">
         <AnimatedGradientText>
           ✨
