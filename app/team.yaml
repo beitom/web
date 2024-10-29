@@ -1,0 +1,189 @@
+board:
+  - name: Paulina Mazurek
+    roles: [ 'Co-founder', 'CEO' ]
+    photo: paulina.mazurek.jpg
+    story: >
+      Formerly Head of allegro.tech at allegro, the biggest e-commerce platform in the region,
+      responsible for building company’s tech brand and supporting developers and startups
+      communities in Poland. Before, she helped in setting up Google R&amp;D site in Krakow and
+      become Program Manager responsible for several programs including “Google for
+      Entrepreneurs Kraków”, GTV second screen app, or Google Transit for Kraków. Prior to
+      Google she worked for Motorola, holding various administrative positions.
+  - name: Wojciech Burkot
+    roles: [ 'Co-founder', 'Chief Physics Officer' ]
+    education: [ [ 'PhD in Physics', 'Jagiellonian University' ] ]
+    photo: wojciech.burkot.jpg
+    story: >
+      Previously, Chief Technology Officer at Grupa Allegro responsible for Marketplace,
+      focused on Mobile and Big Data. Before Allegro, he had started and run Google R&amp;D
+      Center in Krakow as a Site Lead and Engineering Director between 2006-2014. Prior to
+      Google, he worked in a number of roles at Motorola. Earlier in his career, he was an
+      Assistant Professor of Computer Science at AGH in Kraków and a researcher at Institute
+      of Nuclear Physics.
+  - name: Witold Jarnicki
+    roles: [ 'Co-founder', 'Chief Mathematics Officer' ]
+    education: [ [ 'PhD in Mathematics', 'Jagiellonian University' ] ]
+    photo: witold.jarnicki.jpg
+    story: >
+      Witold is an expert in complex analysis, algebraic geometry, computer
+      algebra and algorithmic complexity. Recently, as a Software Engineer
+      at Corvil, he worked on low-level performance of the core system,
+      contribution towards user-customizable big-data analysis framework
+      based on open-source components and the solution allowing monitoring
+      network traffic in cloud deployments. Between 2007-2014 he worked
+      at the same position at Google R&amp;D Kraków within Infrastructure area,
+      responsible for analysis and optimization of cluster resource utilization,
+      Omega cluster OS, ML-based ads optimization. Prior to Google he was assistant
+      professor at the Jagiellonian University.
+team:
+  - name: Adam Szady
+    roles: [ 'Software Engineer' ]
+    photo: adam.szady.jpg
+    story: >
+      Adam joined BEIT during the fourth year of his studies. Always keen on learning,
+      willing to dive deep into quantum computing, questioning more traditional approach
+      to problem solving, added creativity to our team. He has already managed to work
+      for Sabre as software engineer, got to Google Distributed Code Jam finals and
+      spend 3 months as Google intern in Munich.
+  - name: Marcin Briański
+    roles: [ 'Mathematician' ]
+    photo: marcin.brianski.jpg
+    story: >
+      Marcin has joined BEIT in the summer of 2018, initially just for the summer
+      internship but decided to continue working with us. He is currently enrolled in a
+      PhD programme in Theoretical Computer Science at the Jagiellonian University.
+      His tasks at BEIT range from implementing our algorithms to proving they can't work
+      (any better). His interests focus around combinatorics, in particular
+      structural graph theory and optimisation.
+  - name: Jan Tułowiecki
+    roles: [ 'Software Engineer' ]
+    photo: jan.tulowiecki.jpg
+    story: >
+      Jan is a competitive programming spirit. He loves analysing problems in depth and solving algorithmic
+      challenges. In 2019 he obtained his master's degree in Computer Science on
+      University of Science and Technology in Kraków. He represented his university on various
+      coding competitions, both national and Europe&ndash;wide. Jan joined BEIT already having work experience
+      in software engineering gained at Samsung R&amp;D in Kraków.
+  - name: Szymon Pliś
+    roles: [ 'General Engineer' ]
+    education: [ [ 'PhD in Mathematics', 'Jagiellonian University' ] ]
+    photo: szymon.plis.jpg
+    story: >
+      Szymon is an expert in complex analysis and nonlinear PDEs. Recently he worked as an
+      assistant professor at the Jagiellonian University. Earlier he was doing his research
+      in the Cracow University of Technology and in the Polish Academy of Sciences.
+  - name: Jacek Horecki
+    roles: [ 'Mathematician' ]
+    photo: jacek.horecki.jpg
+    story: >
+      Jacek joined the BEIT team in 2020 while pursuing his studies in Mathematics and Computer Science
+      at Jagiellonian University. Currently, he is a PhD student, specializing in differential geometry and topology. At BEIT,
+      Jacek is a passionate C++ and Python developer with a strong interest in simulations and cloud technologies.
+  - name: Natalia Szczepanik
+    roles: [ 'Administrative assistant' ]
+    photo: natalia.szczepanik.jpg
+    story: >
+      Natalia has joined BEIT in 2020.
+      She is currently pursuing a master's degree in clinical psychology.
+  - name: Bruno Pitrus
+    roles: [ 'Mathematician' ]
+    photo: bruno.pitrus.jpg
+    story: >
+      Bruno has C++ programming experience, having previously interned at Techmo working on a natural language grammar parser.
+      He studied computer science and mathematics at Jagiellonian University.
+      His interests range from category theory and algebraic topology to computational complexity,
+      and he believes that abstract algebra is the best approach for solving mathematical problems.
+  - name: Konrad Deka
+    roles: [ 'Mathematician' ]
+    photo: konrad.deka.jpg
+    story: >
+      Konrad joined BEIT in 2021. 
+      He is currently pursuing his PhD in Mathematics at the Jagiellonian University in the area 
+      of dynamical systems and ergodic theory. 
+      He is also a C++ and Python programmer who deals with a variety of mathematics-related tasks.
+  - name: Emil Żak
+    roles: [ 'Physicist' ]
+    education: [ [ 'PhD in theoretical molecular and optical physics', 'University College London' ] ]
+    photo: emil.zak.jpg
+    story: >
+      Emil got his PhD in theoretical molecular and optical physics at University College London, UK.
+      Later he stayed as a post-doctoral fellow at Queen's University (Ontario, Canada)
+       and more recently he was a research associate at the Deutsches Elektronen-Synchtrotron DESY in Hamburg, Germany.
+      His research has been focused on designing new computational methods for the quantum dynamics of molecules.
+      Now with BEIT he is developing algorithms for simulating quantum systems with analog and digital quantum computers.
+  - name: Joanna Bednarczyk
+    roles: [ 'Accounting specialist' ]
+    photo: joanna.bednarczyk.jpg
+    # The story was written with the help of ChatGPT:
+    story: >
+      Joanna holds degrees in finance and accounting from the Cracow University of Economics
+       and the Warsaw School of Economics.
+      In 2013, she completed an internship of several months in London as part of the Erasmus program,
+       that allowed her to gain valuable international experience in the field of accounting and finance.
+      She has further enhanced her expertise through numerous specialized courses and training programs
+       in finance, accounting, and taxation,
+       including advanced courses for Head of Accounting and Financial Director roles.
+      With 15 years of professional experience,
+       Joanna thrives in collaborative environments with top mathematicians and physicists,
+       reflecting her strong affinity for science.
+      Her passion for tackling challenges aligns perfectly with her role at BEIT,
+       where she finds ample opportunities to excel.
+  - name: Tom Ginsberg
+    roles: [ 'Physicist', 'Quantum Error Correction' ]
+    photo: tom.ginsberg.jpg
+    story: >
+      Tom was a former BEIT intern in Kraków in summer 2019 while completing his undergraduate studies in 
+      Engineering Physics at the University of British Columbia. At the time he worked on quantum algorithms related to graph theory, 
+      quantum walks/simulation, and continuous variable quantum computing. After completing his MSc in Computer Science in 2022 at the University of Toronto 
+      on Machine Learning safety algorithms, he co-founded BEIT's new research headquarters in Toronto, Canada where 
+      he currently manages the technical team and business operations as well as working on fault tolerant
+      quantum computing and quantum error correction.
+  - name: Ákos Nagy
+    photo: akos.nagy.jpg
+    roles: [ 'Mathematician', 'Quantum Algorithms']
+    education: [ [ 'PhD in Mathematics', 'Michigan State University' ] ]
+    story: >
+      Ákos received his Ph.D. in Mathematics from Michigan State University and also holds Master’s degrees in 
+      Engineering Physics and in Mathematics, both from Budapest University of Technology. 
+      Before joining BEIT, he held a Visiting Assistant Professorship at the University of California, 
+      Santa Barbara, a William W. Elliott Assistant Research Professorship of Mathematics at Duke University, 
+      a Fields Postdoctoral Fellowship at the Fields Institute, 
+      and a Postdoctoral Fellowship at the University of Waterloo.
+  - name: Hirsh Kamakari
+    photo: hirsh.kamakari.jpg
+    roles: [ 'Physicist', 'Quantum Simulation' ]
+    education: [ [ 'PhD in Physics', 'California Institute of Technology' ] ]
+    story: >
+      Hirsh joined BEIT in May 2024 after earning his Ph.D. in Applied Physics from Caltech, 
+      where he specialized in quantum simulation algorithms for open quantum systems. 
+      His academic and practical experience includes internships at IBM Research, 
+      where he developed quantum machine learning and simulation algorithms, 
+      and hands-on experimental setups at the University of British Columbia and ETH Zurich. 
+      His diverse background also includes superconducting theory at the Max Planck Institute 
+      and work with particle decay data at TRIUMF. At BEIT, Hirsh applies his extensive 
+      knowledge of quantum mechanics and algorithm development to pioneer advancements in 
+      quantum simulation.
+  - name: Michael Tarino
+    photo: michael.tarino.jpg
+    roles: [ 'Head of Sales', 'Business Development Manager' ]
+    story: >
+      Michael joined BEIT in late 2023 and works in business development, focusing on building growth strategies, 
+      developing relationships with hardware providers, and sourcing commercial clients. 
+      He leverages his background in science and business to expand the application of quantum algorithms 
+      and quantum-inspired solutions for computational advantage. 
+      While pursuing a master's in physics from the Stevens Institute of Technology, 
+      Michael conducted research with Dr. Herman’s Quantum Alliance Initiative, 
+      exploring quantum technology's implications for national security and cybersecurity. 
+      Before this, he gained experience in big data analysis and financial services with American Express and UBS Investment Bank. 
+      He earned his undergraduate degree from the Wharton School of the University of Pennsylvania, 
+      where he interned with the Wharton Public Policy Initiative and a U.S. Congressional Office.
+  - name: Michał Szczepanik
+    photo: michal.szczepanik.jpg
+    roles: [ 'Physicist' ]
+    story: >
+      Michał is an Applied Physics student at Gdańsk University of Technology. 
+      He joined BEIT in 2024, initially for a summer internship. 
+      Before that, he was also an intern at the Center For Theoretical Physics in Warsaw. 
+      His work at BEIT is focused on molecular calculations on quantum computers. 
+      Apart from that, he is also interested in various areas of physics and enjoys using knowledge 
+      from different fields to find novel solutions to complex problems.
