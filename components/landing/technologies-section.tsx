@@ -1,5 +1,8 @@
 // Example cards for the updated component
-import { LayoutGrid } from "../ui/layout-grid"
+import { SiThealgorithms } from "react-icons/si"
+import { GiCubeforce } from "react-icons/gi"
+import { CiWavePulse1 } from "react-icons/ci"
+import { LayoutGrid } from "@/components/ui/layout-grid"
 
 const Algorithms = () => {
   return (
@@ -83,16 +86,13 @@ const Simulation = () => {
     </div>
   )
 }
-import { SiThealgorithms } from "react-icons/si"
-import { GiCubeforce } from "react-icons/gi"
-import { CiWavePulse1 } from "react-icons/ci"
 
 const cards = [
   {
     id: 1,
     title: "Quantum Algorithms",
     icon: <SiThealgorithms className="size-5 text-primary" />,
-    description: "Discover how our quantum algorithms provide breakthroughs in optimization and cryptography.",
+    description: "Understand how our quantum and quantum inspired algorithms offer new solutions in optimization.",
     content: <Algorithms />,
     className: "col-span-1"
   },
@@ -100,7 +100,7 @@ const cards = [
     id: 2,
     title: "Quantum Error Correction",
     icon: <GiCubeforce className="size-5 text-primary" />,
-    description: "Learn about our advanced error correction techniques to make quantum computing reliable.",
+    description: "Learn about quantum error correction and its importance in building reliable quantum computers.",
     content: <ErrorCorrection />,
     className: "col-span-1"
   },
@@ -108,13 +108,14 @@ const cards = [
     id: 3,
     title: "Material Simulation",
     icon: <CiWavePulse1 className="size-5 text-primary" />,
-    description: "Explore how quantum simulations are transforming drug discovery and battery design.",
+    description:
+      "Discover how quantum simulations are reshaping the field of materials design from drugs to batteries.",
     content: <Simulation />,
     className: "col-span-1"
   }
 ]
 
-export function LayoutGridDemo() {
+export function TechnologyGrid() {
   return (
     <section className="container mx-auto px-4 lg:px-8 py-16">
       <h1 className="text-4xl font-bold text-white mb-8 text-center">Our Technology</h1>
