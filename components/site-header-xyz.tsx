@@ -118,7 +118,7 @@ export function SiteHeader() {
 
   useEffect(() => {
     const changeBackground = () => {
-      if (window.scrollY > 50) {
+      if (window.scrollY > 10) {
         setIsScrolled(false)
       } else {
         setIsScrolled(true)
@@ -142,7 +142,7 @@ export function SiteHeader() {
         <div className="mx-auto flex h-[60px] w-full items-center justify-between">
           <Link className="text-md flex items-center" href="/">
             <img
-              src="https://beit.tech/assets/images/other_images/beit.logo.white.svg"
+              src="/assets/images/other_images/beit.logo.white.svg"
               className="text-primary size-12"
               alt="BEIT Logo"
             />
