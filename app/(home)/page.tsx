@@ -6,7 +6,7 @@ import React from "react"
 import { BeitTimeline } from "@/components/landing/timeline-section"
 import LearnMoreSection from "@/components/landing/learnmore-section"
 import { motion } from "framer-motion"
-import { LayoutGridDemo } from "@/components/landing/technologies-section"
+import { TechnologyGrid } from "@/components/landing/technologies-section"
 import ParticlesBackground from "@/components/particles"
 
 export default function Page() {
@@ -16,6 +16,9 @@ export default function Page() {
     transition: { duration: 0.8 },
     viewport: { once: true, amount: 0.25 }
   }
+
+  const timelineAnimationSettings = animationSettings
+  timelineAnimationSettings.viewport = { once: true, amount: 0.05 }
 
   return (
     <>
@@ -29,7 +32,7 @@ export default function Page() {
         </div>
 
         {/* Backdrop Blur Layer */}
-        <div className="absolute inset-0 backdrop-blur-[4px] z-[-1] pointer-events-none"></div>
+        <div className="absolute inset-0 backdrop-blur-[1px] z-[-1] pointer-events-none"></div>
         <div className="flex items-center justify-center h-full relative z-10">
           <div>
             <HeroSection />
@@ -44,10 +47,10 @@ export default function Page() {
       </motion.div>
 
       <motion.div {...animationSettings}>
-        <LayoutGridDemo />
+        <TechnologyGrid />
       </motion.div>
 
-      <motion.div {...animationSettings}>
+      <motion.div {...timelineAnimationSettings}>
         <BeitTimeline />
       </motion.div>
     </>
