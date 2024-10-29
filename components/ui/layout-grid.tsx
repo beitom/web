@@ -1,18 +1,18 @@
 "use client"
 import React from "react"
 import { cn } from "@/lib/utils"
-import { Button } from "./button"
+import { Button } from "@/components/ui/button"
 import { ArrowRightIcon } from "@radix-ui/react-icons"
 import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger
-} from "@/components/ui/dialog"
+  Drawer,
+  DrawerContent,
+  DrawerDescription,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger
+} from "@/components/ui/drawer"
 
-import { Cover } from "./cover"
+import { Cover } from "@/components/ui/cover"
 import { ScrollArea } from "@/components/ui/scroll-area"
 
 // Updated Card Type
@@ -37,25 +37,25 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
 
 const Card = ({ card }: { card: Card }) => {
   return (
-    <Dialog>
+    <Drawer>
       <div className={cn(card.className, "relative overflow-hidden bg-transparent border rounded-lg h-full w-full")}>
         <CardContent card={card} />
       </div>
-      <DialogContent className="p-4 rounded-lg max-h-[80vh] max-w-[95vw] overflow-y-auto">
-        <DialogHeader>
-          <DialogTitle className="text-center">
+      <DrawerContent className="p-4 rounded-lg">
+        <DrawerHeader>
+          <DrawerTitle className="text-center">
             <h3 className="text-xl font-bold mb-2">
               <Cover className="flex flex-row gap-2">
                 <span className="mt-1">{card.icon}</span>
                 <span>{card.title}</span>
               </Cover>
             </h3>
-          </DialogTitle>
-          {/*<DialogDescription>{card.description}</DialogDescription>*/}
-        </DialogHeader>
+          </DrawerTitle>
+          <DrawerDescription hidden={true}>{card.title}</DrawerDescription>
+        </DrawerHeader>
         <ScrollArea className="h-full">{card.content}</ScrollArea>
-      </DialogContent>
-    </Dialog>
+      </DrawerContent>
+    </Drawer>
   )
 }
 
@@ -71,11 +71,11 @@ const CardContent = ({ card }: { card: Card }) => {
       </div>
       <div className="flex justify-between items-end">
         <div className="p-2">{card.icon}</div>
-        <DialogTrigger asChild>
+        <DrawerTrigger asChild>
           <Button variant="ghost" className="w-auto">
             Learn More <ArrowRightIcon className="ms-2" />
           </Button>
-        </DialogTrigger>
+        </DrawerTrigger>
       </div>
     </div>
   )
