@@ -12,7 +12,7 @@ export default function MarketingLayout({ children }: MarketingLayoutProps) {
   return (
     <>
       <SiteHeader />
-      <main className="mx-auto flex-1 overflow-hidden">{children}</main>
+      <main className="mx-auto">{children}</main>
       <SiteFooter />
     </>
   )

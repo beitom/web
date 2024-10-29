@@ -12,7 +12,7 @@ export default function ContactLayout({ children }: ContactLayoutProps) {
   return (
     <>
       <SiteHeader />
-      <main className="mx-auto flex-1 overflow-hidden mt-24">{children}</main>
+      <main className="mx-auto mt-24">{children}</main>
       <SiteFooter />
     </>
   )
