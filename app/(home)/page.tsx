@@ -6,7 +6,7 @@ import React from "react"
 import { BeitTimeline } from "@/components/landing/timeline-section"
 import LearnMoreSection from "@/components/landing/learnmore-section"
 import { motion } from "framer-motion"
-import { LayoutGridDemo } from "../../components/landing/technologies-section"
+import { LayoutGridDemo } from "@/components/landing/technologies-section"
 import ParticlesBackground from "@/components/particles"
 
 export default function Page() {
@@ -14,12 +14,12 @@ export default function Page() {
     initial: { opacity: 0, y: 50 },
     whileInView: { opacity: 1, y: 0 },
     transition: { duration: 0.8 },
-    viewport: { once: false, amount: 0.25 }
+    viewport: { once: true, amount: 0.25 }
   }
 
   return (
     <>
-      <div className="absolute inset-0 bg-gradient-to-b from-blue-950 from-5% to-transparent z-[-3]"></div>
+      {/*<div className="absolute inset-0 bg-gradient-to-b from-blue-950 from-5% to-transparent z-[-3]"></div>*/}
       {/* Hero Section Wrapper */}
       <div className="relative w-full h-screen overflow-hidden">
         {/* Background iframe */}
@@ -47,12 +47,7 @@ export default function Page() {
         <LayoutGridDemo />
       </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-        viewport={{ once: true, amount: 0 }}
-      >
+      <motion.div {...animationSettings}>
         <BeitTimeline />
       </motion.div>
     </>
