@@ -14,6 +14,13 @@ import {
 
 import { Cover } from "@/components/ui/cover"
 import { ScrollArea } from "@/components/ui/scroll-area"
+import {
+  ResponsiveModal,
+  ResponsiveModalContent,
+  ResponsiveModalDescription,
+  ResponsiveModalHeader,
+  ResponsiveModalTitle
+} from "./responsive-modal"
 
 // Updated Card Type
 type Card = {
@@ -37,25 +44,27 @@ export const LayoutGrid = ({ cards }: { cards: Card[] }) => {
 
 const Card = ({ card }: { card: Card }) => {
   return (
-    <Drawer>
-      <div className={cn(card.className, "relative overflow-hidden bg-transparent border rounded-lg h-full w-full")}>
+    <ResponsiveModal>
+      <div
+        className={cn(card.className, "relative overflow-hidden bg-transparent border rounded-lg max-h-[90%] w-full")}
+      >
         <CardContent card={card} />
       </div>
-      <DrawerContent className="p-4 rounded-lg">
-        <DrawerHeader>
-          <DrawerTitle className="text-center">
+      <ResponsiveModalContent className="p-4 rounded-lg">
+        <ResponsiveModalHeader>
+          <ResponsiveModalTitle className="text-center">
             <h3 className="text-xl font-bold mb-2">
               <Cover className="flex flex-row gap-2">
                 <span className="mt-1">{card.icon}</span>
                 <span>{card.title}</span>
               </Cover>
             </h3>
-          </DrawerTitle>
-          <DrawerDescription hidden={true}>{card.title}</DrawerDescription>
-        </DrawerHeader>
+          </ResponsiveModalTitle>
+          <ResponsiveModalDescription hidden={true}>{card.title}</ResponsiveModalDescription>
+        </ResponsiveModalHeader>
         <ScrollArea className="h-full">{card.content}</ScrollArea>
-      </DrawerContent>
-    </Drawer>
+      </ResponsiveModalContent>
+    </ResponsiveModal>
   )
 }
 
@@ -69,7 +78,7 @@ const CardContent = ({ card }: { card: Card }) => {
 
         <p className="text-sm mb-4">{card.description}</p>
       </div>
-      <div className="flex justify-between items-end">
+      <div className="flex justify-between items-end mb-2">
         <div className="p-2">{card.icon}</div>
         <DrawerTrigger asChild>
           <Button variant="ghost" className="w-auto">
