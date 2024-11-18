@@ -1,5 +1,3 @@
-"use client"
-
 import { ArrowRightIcon } from "@radix-ui/react-icons"
 
 import TextShimmer from "@/components/ui/text-shimmer"
@@ -8,7 +6,6 @@ import AnimatedGradientText from "../ui/animated-gradient-text"
 import { cn } from "../../lib/utils"
 import { ChevronRight } from "lucide-react"
 import Link from "next/link"
-import Image from "next/image"
 
 export default function HeroSection() {
   return (
