@@ -4,11 +4,11 @@ import { SiteFooter } from "@/components/site-footer"
 import { SiteHeader } from "@/components/site-header-xyz"
 import React from "react"
 
-interface MarketingLayoutProps {
+interface HomeLayoutProps {
   children: React.ReactNode
 }
 
-export default function MarketingLayout({ children }: MarketingLayoutProps) {
+export default function HomeLayout({ children }: HomeLayoutProps) {
   return (
     <>
       <SiteHeader />

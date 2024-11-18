@@ -15,7 +15,7 @@ export default function HeroSection() {
     <section id="hero" className="relative mx-auto mt-32 lg:mt-64 max-w-7xl px-6 text-center md:px-8">
       <div className="flex flex-col h-[90vh] justify-center">
         <div>
-          <Link className="animate-fade-in" href="/qubo">
+          <Link className="animate-fade-in" href="/products">
             <AnimatedGradientText>
               ✨
               <TextShimmer>
@@ -24,7 +24,7 @@ export default function HeroSection() {
                     `ms-1 inline animate-gradient bg-gradient-to-r from-[#ffaa40] via-[#9c40ff] to-[#ffaa40] bg-[length:var(--bg-size)_100%] bg-clip-text text-transparent`
                   )}
                 >
-                  Try our QUBO Solver
+                  Explore our products
                 </span>
               </TextShimmer>
               <ChevronRight className="ml-1 size-3 transition-transform duration-300 ease-in-out group-hover:translate-x-0.5" />
