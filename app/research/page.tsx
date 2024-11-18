@@ -12,16 +12,14 @@ import { Button } from "@/components/ui/button"
 import { Cover } from "@/components/ui/cover"
 import publications, { Publication } from "@/data/publications.data"
 import { InlineMath } from "react-katex"
+import { Masonry } from "masonic"
 import "katex/dist/katex.min.css"
-import { ScrollArea } from "@/components/ui/scroll-area"
+import { cn } from "../../lib/utils"
 
 export default function Component() {
   const [searchTerm, setSearchTerm] = useState("")
 
-  const allTags = useMemo(
-    () => Array.from(new Set(publications.flatMap((pub) => pub.tags || []))).sort(),
-    [publications]
-  )
+  const allTags = useMemo(() => Array.from(new Set(publications.flatMap((pub) => pub.tags || []))).sort(), [])
 
   const filteredPublications = useMemo(
     () =>
@@ -34,15 +32,15 @@ export default function Component() {
           pub.tags?.some((tag) => tag.toLowerCase().includes(searchLower))
         )
       }),
-    [publications, searchTerm]
+    [searchTerm]
   )
 
   return (
     <div className="min-h-screen bg-background text-white p-6 md:p-12">
       <div className="mx-auto space-y-8">
         <header className="space-y-4">
-          <Cover className="text-4xl font-bold">Publications</Cover>
-          <p className="text-gray-400">Recent academic publications, presentations, and preprints</p>
+          <Cover className="text-4xl font-bold">Research</Cover>
+          <p className="text-gray-400">Recent publications, presentations, and preprints.</p>
           <div className="relative">
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-white" />
             <Input
@@ -53,31 +51,46 @@ export default function Component() {
               className="pl-10"
             />
           </div>
-          {searchTerm && (
-            <div className="flex flex-wrap gap-2">
-              {allTags
-                .filter((tag) => tag.toLowerCase().includes(searchTerm.toLowerCase()))
-                .map((tag) => (
-                  <Badge
-                    key={tag}
-                    variant="secondary"
-                    className="cursor-pointer hover:bg-secondary/80"
-                    onClick={() => setSearchTerm(tag)}
-                  >
-                    {tag}
-                  </Badge>
-                ))}
-            </div>
-          )}
-        </header>
-
-        <ScrollArea className="h-screen border rounded-xl">
-          <div className="grid gap-4 p-4">
-            {filteredPublications.map((pub, index) => (
-              <PublicationCard key={index} pub={pub} onTagClick={setSearchTerm} />
+          <div className="flex flex-wrap gap-2">
+            {allTags.map((tag) => (
+              <div
+                key={tag}
+                className={cn(
+                  "cursor-pointer py-2 px-3 rounded-full text-sm font-semibold",
+                  searchTerm === tag ? "bg-zinc-100 text-black" : "bg-zinc-800 text-white hover:bg-zinc-600"
+                )}
+                onClick={() => setSearchTerm(tag)}
+              >
+                {tag}
+              </div>
             ))}
           </div>
-        </ScrollArea>
+
+          {/*{searchTerm && (*/}
+          {/*  <div className="flex flex-wrap gap-2">*/}
+          {/*    {allTags*/}
+          {/*      .filter((tag) => tag.toLowerCase().includes(searchTerm.toLowerCase()))*/}
+          {/*      .map((tag) => (*/}
+          {/*        <Badge*/}
+          {/*          key={tag}*/}
+          {/*          variant="default"*/}
+          {/*          className="cursor-pointer hover:bg-secondary/80"*/}
+          {/*          onClick={() => setSearchTerm(tag)}*/}
+          {/*        >*/}
+          {/*          {tag}*/}
+          {/*        </Badge>*/}
+          {/*      ))}*/}
+          {/*  </div>*/}
+          {/*)}*/}
+        </header>
+
+        <Masonry
+          key={filteredPublications.length}
+          items={filteredPublications}
+          columnGutter={16}
+          columnWidth={400}
+          render={({ data }) => <PublicationCard pub={data} onTagClick={setSearchTerm} />}
+        />
       </div>
     </div>
   )
@@ -118,10 +131,11 @@ function PublicationCard({ pub, onTagClick }: PublicationCardProps) {
   return (
     <motion.div
       whileHover={{ scale: 1.005 }}
+      whileTap={{ scale: 0.95 }}
       initial={{ opacity: 0, scale: 0.9, y: 50 }}
-      animate={{ opacity: 1, scale: 1, y: 0 }}
+      whileInView={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ duration: 0.3 }}
-      viewport={{ once: false, amount: 0.25 }}
+      viewport={{ once: true, amount: 0.01 }}
       onClick={toggleExpand}
     >
       <Card className="bg-zinc-900 relative">
@@ -172,12 +186,11 @@ function PublicationCard({ pub, onTagClick }: PublicationCardProps) {
           )}
 
           {pub.mediaLinks && (
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col gap-4">
               {pub.mediaLinks.map((link, i) => (
                 <Link
                   key={i}
                   href={link.url}
-                  // make open in new tab
                   target="_blank"
                   onClick={(event) => event.stopPropagation()}
                   className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"

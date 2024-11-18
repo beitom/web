@@ -18,7 +18,7 @@ const publications: Publication[] = [
   {
     title: "Clifford circuits over non-cyclic abelian groups",
     authors: ["Milo Moses", "Jacek Horecki", "Konrad Deka", "Jan Tułowiecki"],
-    tags: ["Clifford", "Abelian", "Topological"],
+    tags: ["Quantum Error Correction", "Quantum Gates"],
     category: "Publications",
     date: "2024-02-22",
     summary: "We present a generalized approach to Clifford group construction for any abelian group.",
@@ -31,13 +31,13 @@ const publications: Publication[] = [
     ]
   },
   {
-    title: "Anyons in a highly-entangled toric xy model",
+    title: "Anyons in a highly-entangled toric-$xy$ model",
     authors: ["Milo Moses", "Konrad Deka"],
-    tags: ["Topological", "Anyons", "Toric"],
+    tags: ["Quantum Error Correction", "Topological Quantum Computing"],
     category: "Publications",
     date: "2023-08-03",
     summary:
-      "We show that in some sense the only obstruction for a toric $xy$ model to have a topological order is a $U(1)$ gauge action.",
+      "We show that in some sense the only obstruction for a toric-$xy$ model to have a topological order is a $U(1)$ gauge action.",
     body: "While ostensibly coined in 1989 by Xiao-Gang Wen, the term “topological order” has been in use since 1972 by Kosterlitz–Thouless to describe the behavior of the classical $xy$ model. It has been noted that the $xy$ model does not have Wen’s topological order since it is also subject to a nontopological $U(1)$ gauge action. We show in a sense this is the only obstruction. That is, if the $xy$ model evolves quantumly into gauge invariant states then one recovers pure topological order. In fact, we show the quantum $xy$ topological order is an infinite lattice limit of Kitaev’s quantum double model applied to the group $G = \\mathbb{Z}$.",
     mediaLinks: [
       {
@@ -49,7 +49,7 @@ const publications: Publication[] = [
   {
     title: "Quantum Boltzmann sampling – noisiness of some existing hardware approaches",
     authors: ["Witold Jarnicki"],
-    tags: ["Sampling", "Boltzmann"],
+    tags: ["Optimization", "Hardware", "QUBO"],
     category: "Publications",
     date: "2018-12-10",
     summary:
@@ -70,7 +70,7 @@ const publications: Publication[] = [
     title: "Diagonal operator decomposition on restricted topologies via enumeration of quantum state subsets",
     authors: ["Jan Tułowiecki", "Łukasz Czerwiński", "Konrad Deka", "Jan Gwinner", "Witold Jarnicki", "Adam Szady"],
     category: "Publications",
-    tags: ["Diagonal", "Operator", "Decomposition"],
+    tags: ["Quantum Algorithms", "Quantum Gates", "Compilation"],
     date: "2024-03-04",
     summary:
       "We analyze the CX implementation cost of generic diagonal operators, based on the target device topology.",
@@ -84,7 +84,7 @@ const publications: Publication[] = [
   },
   {
     title: "Fixed-point Grover Adaptive Search for QUBO Problems",
-    tags: ["QUBO", "Grover", "Adaptive"],
+    tags: ["Quantum Algorithms", "Quantum Gates", "Optimization", "QUBO", "Grover"],
     authors: ["Ákos Nagy"],
     category: "Publications",
     date: "2023-11-10",
@@ -102,7 +102,7 @@ const publications: Publication[] = [
     title: "Efficient unstructured search implementation on current ion-trap quantum processors",
     authors: ["Vladyslav Hlembotskyi", "Rafał Burczyński", "Witold Jarnicki", "Adam Szady", "Jan Tułowiecki"],
     category: "Publications",
-    tags: ["Grover", "Ion-trap"],
+    tags: ["Grover", "Hardware"],
     date: "2020-10-08",
     summary:
       "We present experimental results on running unstructured search in spaces defined by 4, 5, and 6 qubits on ion-trapped quantum processors.",
@@ -118,7 +118,7 @@ const publications: Publication[] = [
     title: "Benchmarking 16-element quantum search algorithms on IBM quantum processors",
     authors: ["Jan Gwinner", "Marcin Briański", "Wojciech Burkot", "Łukasz Czerwiński", "Vladyslav Hlembotskyi"],
     category: "Publications",
-    tags: ["Grover", "IBM"],
+    tags: ["Grover", "Hardware"],
     date: "2020-06-13",
     summary: "We present experimental results on running 4-qubit unstructured search on IBM quantum processors.",
     body: "Our best attempt attained a probability of success around 24.5%. We explore the hardware limits, showing performance degradation, and conclude that it is crucial to design hardware-aware algorithms and include optimizations for NISQ devices.",
@@ -140,7 +140,7 @@ const publications: Publication[] = [
       "Adam Szady"
     ],
     category: "Publications",
-    tags: ["Grover", "Structure"],
+    tags: ["Grover", "Quantum Algorithms", "Quantum Gates"],
     date: "2020-06-10",
     summary:
       "We present a novel quantum algorithm for solving the unstructured search problem with one marked element.",
@@ -155,7 +155,7 @@ const publications: Publication[] = [
   {
     title: "Quantum Computing Algorithms for NISQ Era",
     authors: ["Wojciech Burkot"],
-    tags: ["NISQ", "Algorithms"],
+    tags: ["NISQ", "Quantum Algorithms"],
     category: "Publications",
     date: "2020-05-15",
     summary:
@@ -170,7 +170,7 @@ const publications: Publication[] = [
   },
   {
     title: "Novel oracle constructions for quantum random access memory",
-    tags: ["QRAM"],
+    tags: ["Quantum Algorithms", "Quantum Memory", "QRAM"],
     authors: ["Ákos Nagy"],
     category: "Publications",
     date: "2024-05-30",
@@ -187,7 +187,7 @@ const publications: Publication[] = [
   {
     title: "Creating rotational coherences in molecules aligned along the intermediate moment of inertia axis",
     authors: ["Emil Żak"],
-    tags: ["Molecules", "Rotational", "Alignment"],
+    tags: ["Quantum Simulation", "Quantum Control", "Molecular Physics"],
     category: "Publications",
     date: "2022-11-21",
     summary:
@@ -203,7 +203,7 @@ const publications: Publication[] = [
   {
     title: "A short note on graphs with long Thomason's chains",
     authors: ["Marcin Briański", "Adam Szady"],
-    tags: ["Graphs", "Hamiltonian", "Thomason"],
+    tags: ["Graph Theory", "NP Hardness"],
     category: "Publications",
     date: "2019-03-06",
     summary:
