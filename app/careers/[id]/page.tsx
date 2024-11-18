@@ -1,5 +1,5 @@
-import { CalendarIcon, MapPinIcon, ClockIcon } from "lucide-react"
-import { jobPostings } from "@/data/careers.data"
+import { CalendarIcon, ClockIcon, MapPinIcon } from "lucide-react"
+import { ADDRESSES, jobPostings } from "@/data/careers.data"
 import JobPostingNotFound from "@/app/careers/error"
 import JobApplicationForm from "@/app/careers/form"
 
@@ -15,8 +15,59 @@ export default function JobPage({ params }: { params: { id: string } }) {
     return date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })
   }
 
+  const formatJsonLDJobDescription = (description: string, requirements: string[], responsibilities: string[]) => {
+    // generate some vanilla html as a string using <p>, <br>, <ul>, <li> tags
+    // then return the string
+    return `
+      <h2>About the Role</h2>
+      <p>${description}</p>
+      <h2>Responsibilities</h2>
+      <ul>
+        ${responsibilities.map((responsibility) => `<li>${responsibility}</li>`).join("")}
+      </ul>
+      <h2>Requirements</h2>
+      <ul>
+        ${requirements.map((requirement) => `<li>${requirement}</li>`).join("")}
+      </ul>
+    `
+  }
+
+  // JSON-LD structured data for Google Jobs
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "JobPosting",
+    title: job.title,
+    description: formatJsonLDJobDescription(job.longDescription, job.requirements, job.responsibilities),
+    datePosted: job.dateStart,
+    validThrough: job.dateEnd,
+    employmentType: job.employmentType.replace("_", " ").toUpperCase(),
+    hiringOrganization: {
+      "@type": "Organization",
+      name: "BEIT Inc.",
+      sameAs: "https://beit.tech"
+    },
+    jobLocation: job.city.map((city) => ({
+      "@type": "Place",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: ADDRESSES[city].streetAddress, // You can add a specific address here if needed
+        addressLocality: city,
+        addressRegion: ADDRESSES[city].addressRegion, // Add region if known, e.g., "ON" for Ontario
+        postalCode: ADDRESSES[city].postalCode, // Add postal code if available
+        addressCountry: ADDRESSES[city].addressCountry // Adjust to the correct country code, e.g., "CA" for Canada
+      }
+    })),
+    industry: "Quantum Computing",
+    workHours: "Full-time"
+  }
+
+  console.log("qqqqq", jsonLd)
+
   return (
     <div className="max-w-7xl mx-auto p-6 md:p-12 mt-24 space-y-8">
+      {/* Google Jobs Metadata */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
       <div className="flex flex-col lg:flex-row gap-12">
         {/* Job Details */}
         <div className="flex-1 space-y-8">
