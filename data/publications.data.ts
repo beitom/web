@@ -11,7 +11,7 @@ export type Publication = {
   summary: string
   body: string
   tags?: string[]
-  mediaLinks?: MediaLink[]
+  mediaLinks: MediaLink[]
 }
 
 const publications: Publication[] = [

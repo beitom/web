@@ -1,13 +1,12 @@
 "use client"
 
 import * as React from "react"
-import Link from "next/link"
-import { Video, Link as LinkIcon, FileText, Presentation, Search, ChevronDown, ChevronUp } from "lucide-react"
+import { useMemo, useState } from "react"
+import { ChevronDown, ChevronUp, FileText, Link as LinkIcon, Presentation, Search, Video } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
-import { motion, AnimatePresence } from "framer-motion"
-import { useState, useMemo } from "react"
+import { AnimatePresence, motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Cover } from "@/components/ui/cover"
 import publications, { Publication } from "@/data/publications.data"
@@ -15,6 +14,7 @@ import { InlineMath } from "react-katex"
 import "katex/dist/katex.min.css"
 import { cn } from "@/lib/utils"
 import dynamic from "next/dynamic"
+import { LinkPreview } from "../../components/ui/link-preview"
 
 const Masonry = dynamic(() => import("masonic").then((mod) => mod.Masonry), { ssr: false })
 
@@ -128,7 +128,7 @@ function PublicationCard({ pub, onTagClick }: PublicationCardProps) {
       viewport={{ once: true, amount: 0.01 }}
       onClick={toggleExpand}
     >
-      <Card className="bg-zinc-900 relative">
+      <Card className="bg-zinc-900 relative cursor-pointer">
         <CardHeader>
           <div className="flex flex-col sm:flex-row justify-between items-start gap-4">
             <div className="space-y-1">
@@ -175,26 +175,36 @@ function PublicationCard({ pub, onTagClick }: PublicationCardProps) {
             </div>
           )}
 
-          {pub.mediaLinks && (
-            <div className="flex flex-col gap-4">
-              {pub.mediaLinks.map((link, i) => (
-                <Link
-                  key={i}
-                  href={link.url}
-                  target="_blank"
-                  onClick={(event) => event.stopPropagation()}
-                  className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors"
-                >
+          <div className="flex flex-col gap-4">
+            {pub.mediaLinks.map((link, i) => {
+              const commonProps = {
+                key: i,
+                className:
+                  "inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors w-max p-2 bg-card rounded-lg hover:bg-card/80"
+              }
+
+              const content = (
+                <>
                   <MediaIcon type={link.type} />
                   <span>View {link.type}</span>
-                </Link>
-              ))}
-            </div>
-          )}
+                </>
+              )
+
+              return link.type === "paper" ? (
+                <LinkPreview {...commonProps} url={link.url}>
+                  {content}
+                </LinkPreview>
+              ) : (
+                <a {...commonProps} href={link.url} target="_blank" rel="noopener noreferrer">
+                  {content}
+                </a>
+              )
+            })}
+          </div>
         </CardContent>
 
         <Button
-          variant="outline"
+          variant="ghost"
           className="absolute bottom-4 right-4 text-gray-400 hover:text-white transition-colors"
           onClick={(event) => {
             event.stopPropagation()
