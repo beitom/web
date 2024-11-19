@@ -1,13 +1,14 @@
 "use client"
 import React, { useEffect, useState } from "react"
 import { motion } from "framer-motion"
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 interface ProductData {
   category: string
   name: string
   description: string
   details: string
+  image?: string
 }
 
 const products = [
@@ -15,11 +16,13 @@ const products = [
     name: "BDOCKER",
     category: "Drug Discovery",
     description: "Quantum-powered drug discovery platform",
+    image: "/assets/images/products/bdocker.png",
     details:
       "BDOCKER accelerates pharmaceutical research with quantum algorithms, enabling the discovery of novel drugs and outpacing traditional methods."
   },
   {
     name: "QUBO Solver",
+    image: "/assets/images/products/opt.png",
     category: "Optimization",
     description: "Quantum optimization for complex problems",
     details:
@@ -28,6 +31,7 @@ const products = [
   {
     name: "WaferMol",
     category: "Materials Science",
+    image: "/assets/images/products/Illustration-carbon-nanotube.jpg",
     description: "Molecular simulation at quantum scale",
     details:
       "WaferMol pushes the boundaries of molecular simulation, allowing researchers to explore chemical interactions with unprecedented accuracy and speed."
@@ -35,6 +39,7 @@ const products = [
   {
     name: "CodeQraft",
     category: "Quantum Computing",
+    image: "/assets/images/products/codeqraft.png",
     description: "Quantum error correction compiler",
     details:
       "CodeQraft is our cutting-edge QEC compiler, essential for achieving scalable quantum computation. It offers flexible, efficient compilation for various quantum architectures."
@@ -68,27 +73,23 @@ function ProductCard({ product }: { product: ProductData }) {
   }, [])
 
   return (
-    <Card className="" style={gradientStyle}>
-      <CardHeader>
-        <CardTitle className="text-2xl font-bold text-white">{product.name}</CardTitle>
-        <CardDescription className="text-gray-300">{product.category}</CardDescription>
-      </CardHeader>
-      <CardContent>
-        <p className="text-white">{product.description}</p>
-      </CardContent>
-      <style jsx global>{`
-        @keyframes gradient {
-          0% {
-            background-position: 0% 50%;
-          }
-          50% {
-            background-position: 100% 50%;
-          }
-          100% {
-            background-position: 0% 50%;
-          }
-        }
-      `}</style>
+    <Card className="relative group border-none rounded-lg hover:scale-105 transition-all duration-200 ease-linear">
+      {product?.image && (
+        <img
+          src={product.image}
+          alt={product.name}
+          className="blur-[1px] rounded-xl absolute inset-0 w-full h-full object-cover opacity-50 transition-all duration-200 ease-linear group-hover:blur-sm"
+        />
+      )}
+      <div className="relative z-10 p-4">
+        <CardHeader>
+          <CardTitle className="text-2xl font-bold text-white">{product.name}</CardTitle>
+          <CardDescription className="text-gray-300">{product.category}</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <p className="text-white">{product.description}</p>
+        </CardContent>
+      </div>
     </Card>
   )
 }
