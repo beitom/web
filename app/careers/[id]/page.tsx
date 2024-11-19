@@ -61,8 +61,6 @@ export default function JobPage({ params }: { params: { id: string } }) {
     workHours: "Full-time"
   }
 
-  console.log("qqqqq", jsonLd)
-
   return (
     <div className="max-w-7xl mx-auto p-6 md:p-12 mt-24 space-y-8">
       {/* Google Jobs Metadata */}

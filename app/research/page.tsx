@@ -12,11 +12,13 @@ import { Button } from "@/components/ui/button"
 import { Cover } from "@/components/ui/cover"
 import publications, { Publication } from "@/data/publications.data"
 import { InlineMath } from "react-katex"
-import { Masonry } from "masonic"
 import "katex/dist/katex.min.css"
-import { cn } from "../../lib/utils"
+import { cn } from "@/lib/utils"
+import dynamic from "next/dynamic"
 
-export default function Component() {
+const Masonry = dynamic(() => import("masonic").then((mod) => mod.Masonry), { ssr: false })
+
+export default function Research() {
   const [searchTerm, setSearchTerm] = useState("")
 
   const allTags = useMemo(() => Array.from(new Set(publications.flatMap((pub) => pub.tags || []))).sort(), [])
@@ -34,6 +36,10 @@ export default function Component() {
       }),
     [searchTerm]
   )
+
+  function renderPublicationCard({ data }: { data: Publication }) {
+    return <PublicationCard pub={data} onTagClick={setSearchTerm} />
+  }
 
   return (
     <div className="min-h-screen bg-background text-white p-6 md:p-12">
@@ -65,23 +71,6 @@ export default function Component() {
               </div>
             ))}
           </div>
-
-          {/*{searchTerm && (*/}
-          {/*  <div className="flex flex-wrap gap-2">*/}
-          {/*    {allTags*/}
-          {/*      .filter((tag) => tag.toLowerCase().includes(searchTerm.toLowerCase()))*/}
-          {/*      .map((tag) => (*/}
-          {/*        <Badge*/}
-          {/*          key={tag}*/}
-          {/*          variant="default"*/}
-          {/*          className="cursor-pointer hover:bg-secondary/80"*/}
-          {/*          onClick={() => setSearchTerm(tag)}*/}
-          {/*        >*/}
-          {/*          {tag}*/}
-          {/*        </Badge>*/}
-          {/*      ))}*/}
-          {/*  </div>*/}
-          {/*)}*/}
         </header>
 
         <Masonry
@@ -89,7 +78,8 @@ export default function Component() {
           items={filteredPublications}
           columnGutter={16}
           columnWidth={400}
-          render={({ data }) => <PublicationCard pub={data} onTagClick={setSearchTerm} />}
+          // @ts-expect-error - masonic types are incorrect
+          render={renderPublicationCard}
         />
       </div>
     </div>
