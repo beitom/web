@@ -16,7 +16,7 @@ const products = [
     name: "BDOCKER",
     category: "Drug Discovery",
     description: "Quantum-powered drug discovery platform",
-    image: "/assets/images/products/bdocker.png",
+    image: "/assets/images/products/molanim.gif",
     details:
       "BDOCKER accelerates pharmaceutical research with quantum algorithms, enabling the discovery of novel drugs and outpacing traditional methods."
   },
