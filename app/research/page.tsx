@@ -42,7 +42,7 @@ export default function Research() {
   }
 
   return (
-    <div className="min-h-screen bg-background text-white p-6 md:p-12">
+    <div className="mx-auto mt-24 min-h-screen bg-background text-white p-6 md:p-12">
       <div className="mx-auto space-y-8">
         <header className="space-y-4">
           <Cover className="text-4xl font-bold">Research</Cover>
