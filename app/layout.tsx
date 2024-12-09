@@ -4,7 +4,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
 import "@/app/globals.css"
 import React from "react"
-pp import { SiteHeader } from "@/components/site-header-xyz"
+import { SiteHeader } from "@/components/site-header-xyz"
 import { SiteFooter } from "@/components/site-footer"
 
 const fontSans = FontSans({
