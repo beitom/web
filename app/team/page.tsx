@@ -89,7 +89,7 @@ export default function TeamMembers() {
   const teamMemberCards = useMemo(() => renderMemberCards(teamMembers), [renderMemberCards])
 
   return (
-    <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div className="mt-24 container mx-auto px-4 sm:px-6 lg:px-8 py-8">
       <div className="mb-4">
         <Cover className="text-3xl font-bold animate-fade-in">Our Team</Cover>
       </div>
