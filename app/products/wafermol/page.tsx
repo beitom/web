@@ -9,10 +9,7 @@ import { PiGraphThin } from "react-icons/pi"
 import { PiChartLineUpThin } from "react-icons/pi"
 import { PiSpeedometerThin } from "react-icons/pi"
 import { GiMolecule } from "react-icons/gi"
-import ParticlesBackground from "@/components/particles"
-import { SphereMask } from "@/components/ui/sphere-mask"
 import React from "react"
-import { Button } from "@/components/ui/button"
 
 const features = [
   {

@@ -3,14 +3,12 @@ import { ADDRESSES, jobPostings } from "@/data/careers.data"
 import JobPostingNotFound from "@/app/careers/error"
 import JobApplicationForm from "@/app/careers/form"
 
-interface JobPageProps {
-  params: {
-    id: string
-  }
-}
+type Params = Promise<{ id: string }>
 
-export default function JobPage({ params }: JobPageProps) {
-  const job = jobPostings.find((job) => job.id === Number(params.id))
+export default async function JobPage({ params }: { params: Params }) {
+  const resolvedParams = await params
+  const id = resolvedParams.id
+  const job = jobPostings.find((job) => job.id === Number(id))
 
   if (!job) {
     return <JobPostingNotFound />

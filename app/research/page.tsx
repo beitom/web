@@ -14,7 +14,7 @@ import { InlineMath } from "react-katex"
 import "katex/dist/katex.min.css"
 import { cn } from "@/lib/utils"
 import dynamic from "next/dynamic"
-import { LinkPreview } from "../../components/ui/link-preview"
+import { LinkPreview } from "@/components/ui/link-preview"
 
 const Masonry = dynamic(() => import("masonic").then((mod) => mod.Masonry), { ssr: false })
 

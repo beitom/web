@@ -77,7 +77,7 @@ export default function HeroSection() {
           alt="Molecular Background"
           className="absolute inset-x-0 md:inset-0 md:bottom-0 translate-y-64 md:translate-y-0 w-full h-auto brightness-50 object-cover"
         />
-        {/*/!* Optional dark overlay for better text readability *!/*/}
+        {/*/!* Optional  dark overlay for better text readability *!/*/}
         {/*<div className="absolute inset-0 bg-black bg-opacity-50"></div>*/}
         <motion.div
           initial={{ opacity: 0, y: -50 }}
