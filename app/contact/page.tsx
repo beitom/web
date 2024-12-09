@@ -32,7 +32,7 @@ export default function ContactForm() {
   }
 
   return (
-    <div className="min-h-screen bg-background text-white p-4 md:p-8">
+    <div className="min-h-screen bg-background text-white p-4 md:p-8 mt-24">
       <div className="max-w-4xl mx-auto">
         <Card className="bg-card shadow-xl border-none">
           <CardHeader>
