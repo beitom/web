@@ -10,6 +10,14 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  .mask-oval {
+    mask-image: radial-gradient(ellipse at center, white, transparent);
+    mask-size: 200% 100%; /* 2x wider than tall */
+    mask-repeat: no-repeat;
+    -webkit-mask-image: radial-gradient(ellipse at center, white, transparent);
+    -webkit-mask-size: 200% 100%;
+    -webkit-mask-repeat: no-repeat;
+  }
 }
 
 @layer base {
