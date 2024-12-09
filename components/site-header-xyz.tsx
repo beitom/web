@@ -27,11 +27,6 @@ const menuItem = [
     href: "/research"
   },
   {
-    id: 3,
-    label: "Blog",
-    href: "/blog"
-  },
-  {
     id: 4,
     label: "Team",
     href: "/team"

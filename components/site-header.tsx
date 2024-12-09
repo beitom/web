@@ -19,11 +19,6 @@ const menuItem = [
   },
   {
     id: 3,
-    label: "Blog",
-    href: "#"
-  },
-  {
-    id: 3,
     label: "Team",
     href: "#"
   },
