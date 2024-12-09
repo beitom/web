@@ -8,7 +8,7 @@ import { jobPostings } from "@/data/careers.data"
 
 export default function CareersPage() {
   return (
-    <div className="bg-background text-foreground p-6 md:p-12 mt-24">
+    <div className="mx-auto bg-background text-foreground p-6 md:p-12 mt-24">
       <div className="mx-auto max-w-7xl space-y-8">
         <header className="space-y-4">
           <Cover className="text-4xl font-bold">Careers</Cover>

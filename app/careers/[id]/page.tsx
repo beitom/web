@@ -3,7 +3,13 @@ import { ADDRESSES, jobPostings } from "@/data/careers.data"
 import JobPostingNotFound from "@/app/careers/error"
 import JobApplicationForm from "@/app/careers/form"
 
-export default function JobPage({ params }: { params: { id: string } }) {
+interface JobPageProps {
+  params: {
+    id: string
+  }
+}
+
+export default function JobPage({ params }: JobPageProps) {
   const job = jobPostings.find((job) => job.id === Number(params.id))
 
   if (!job) {
