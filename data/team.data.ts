@@ -148,14 +148,6 @@ export const teamMembers: Member[] = [
       "Hirsh joined BEIT in May 2024 after earning his Ph.D. in Applied Physics from Caltech, where he specialized in quantum simulation algorithms for open quantum systems. His academic and practical experience includes internships at IBM Research, where he developed quantum machine learning and simulation algorithms, and hands-on experimental setups at the University of British Columbia and ETH Zurich. His diverse background also includes superconducting theory at the Max Planck Institute and work with particle decay data at TRIUMF. At BEIT, Hirsh applies his extensive knowledge of quantum mechanics and algorithm development to pioneer advancements in quantum simulation."
   },
   {
-    name: "Michael Tarino",
-    roles: ["Head of Sales", "Business Development Manager"],
-    photo: "michael.tarino.jpg",
-    location: "Washington, D.C.",
-    story:
-      "Michael joined BEIT in late 2023 and works in business development, focusing on building growth strategies, developing relationships with hardware providers, and sourcing commercial clients. He leverages his background in science and business to expand the application of quantum algorithms and quantum-inspired solutions for computational advantage. While pursuing a master's in physics from the Stevens Institute of Technology, Michael conducted research with Dr. Herman’s Quantum Alliance Initiative, exploring quantum technology's implications for national security and cybersecurity. Before this, he gained experience in big data analysis and financial services with American Express and UBS Investment Bank. He earned his undergraduate degree from the Wharton School of the University of Pennsylvania, where he interned with the Wharton Public Policy Initiative and a U.S. Congressional Office."
-  },
-  {
     name: "Michał Szczepanik",
     roles: ["Physicist"],
     photo: "michal.szczepanik.jpg",
