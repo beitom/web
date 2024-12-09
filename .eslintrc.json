@@ -8,6 +8,7 @@
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/no-empty-object-type": "off",
     "jsx-a11y/alt-text": "off",
-    "no-var": "off"
+    "no-var": "off",
+    "prefer-const": "off"
   }
 }
