@@ -1,4 +1,4 @@
-aged import { useCallback, useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 import Particles, { initParticlesEngine } from "@tsparticles/react"
 import { loadSlim } from "@tsparticles/slim" // Optimized slim version
 import { motion, useScroll, useTransform } from "framer-motion"
