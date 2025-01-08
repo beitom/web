@@ -8,7 +8,7 @@ type Params = Promise<{ id: string }>
 export default async function JobPage({ params }: { params: Params }) {
   const resolvedParams = await params
   const id = resolvedParams.id
-  const job = jobPostings.find((job) => job.id === Number(id))
+  const job = jobPostings.find((job) => job.id === id)
 
   if (!job) {
     return <JobPostingNotFound />

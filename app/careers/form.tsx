@@ -118,12 +118,11 @@ export default function JobApplicationForm({ jobTitle, cities }: { jobTitle: str
             <ValidationError prefix="LinkedIn" field="linkedin" errors={state.errors} />
           </div>
           <div className="space-y-2">
-            <Label htmlFor="googleScholar">Google Scholar *</Label>
+            <Label htmlFor="googleScholar">Google Scholar (optional)</Label>
             <Input
               id="googleScholar"
               name="googleScholar"
               type="url"
-              required
               value={formData.googleScholar}
               onChange={handleInputChange}
             />

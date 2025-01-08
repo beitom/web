@@ -1,3 +1,5 @@
+import { normalizeTitle } from "@/lib/utils"
+
 export type MediaLink = {
   type: "paper" | "video" | "slides"
   url: string
@@ -12,6 +14,7 @@ export type Publication = {
   body: string
   tags?: string[]
   mediaLinks: MediaLink[]
+  image?: string
 }
 
 const publications: Publication[] = [
@@ -219,4 +222,17 @@ const publications: Publication[] = [
 ]
 // sort by date
 publications.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+
+const createNormalizedTitleMap = (pubs: Publication[]): Record<string, number> => {
+  const titleMap: Record<string, number> = {}
+  pubs.forEach((pub, index) => {
+    const normalizedTitle = normalizeTitle(pub.title)
+    titleMap[normalizedTitle] = index
+  })
+
+  return titleMap
+}
+
+export const normalizedTitleMap = createNormalizedTitleMap(publications)
+console.log(normalizedTitleMap)
 export default publications

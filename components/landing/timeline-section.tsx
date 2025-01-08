@@ -204,7 +204,7 @@ export function BeitTimeline() {
   ]
   return (
     <section className="container mx-auto px-4 lg:px-8 py-16">
-      <h1 className="text-4xl font-bold text-white text-center">Milestones</h1>
+      <h1 className="text-4xl md:text-6xl font-bold text-neutral-200 font-sans text-center">Milestones</h1>
       <Timeline data={data} />
     </section>
   )

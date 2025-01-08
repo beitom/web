@@ -6,6 +6,10 @@ import { SiGrapheneos } from "react-icons/si"
 import { GiMeshNetwork } from "react-icons/gi"
 import { SiMoleculer } from "react-icons/si"
 import { PiCpuThin } from "react-icons/pi"
+import { Vortex } from "@/components/ui/vortex"
+import { cn } from "@/lib/utils"
+import AnimatedGridPattern from "@/components/ui/animated-grid-pattern"
+import { BackgroundBeams } from "@/components/ui/background-beams"
 
 const products = [
   {
@@ -13,10 +17,11 @@ const products = [
     name: "BDocker",
     category: "Molecular Dynamics",
     href: "/products/bdocker",
-    description: "Fast and precise molecular docking",
+    description:
+      "State of the art fast and precise molecular docking. Test your ligands in seconds. Create your own in house database.",
     background: <div />,
     cta: "Learn more",
-    className: "lg:row-start-1 lg:row-end-3 lg:col-start-1 lg:col-end-2"
+    className: ""
   },
   {
     Icon: SiMoleculer,
@@ -24,19 +29,9 @@ const products = [
     href: "/products/bqchem",
     category: "Molecular Structure",
     background: <div />,
-    description: "GPU accelerated quantum chemistry",
+    description: "GPU accelerated quantum chemistry. Compute potential energy surfaces to screen your candidates.",
     cta: "Learn more",
-    className: "lg:row-start-1 lg:row-end-2 lg:col-start-2 lg:col-end-3"
-  },
-  {
-    Icon: GiMeshNetwork,
-    name: "QUBO Solver",
-    href: "/products/qubo",
-    background: <div />,
-    category: "Optimization",
-    description: "Highly scalable quadratic optimization toolkit",
-    cta: "Learn more",
-    className: "lg:row-start-2 lg:row-end-3 lg:col-start-2 lg:col-end-3"
+    className: ""
   },
   {
     Icon: PiCpuThin,
@@ -44,52 +39,77 @@ const products = [
     href: "/products/wafermol",
     category: "Materials Science",
     background: <div />,
-    description: "Wafer scale engine for molecular dynamics",
+    description: "Rigorously validate candidates in simulation using our wafer scale engine for molecular dynamics",
     cta: "Learn more",
-    className: "lg:row-start-1 lg:row-end-3 lg:col-start-3 lg:col-end-4"
+    className: ""
   }
 ]
 
+const qubo = {
+  Icon: GiMeshNetwork,
+  name: "QUBO Solver",
+  href: "/products/qubo",
+  background: <div />,
+  category: "Optimization",
+  description: "Highly scalable quadratic optimization toolkit",
+  cta: "Learn more",
+  className: ""
+}
+
 export default function LandingPage() {
   return (
-    <main className="min-h-screen bg-background py-32">
-      <HeroSection />
-      <ProductCarousel />
+    <>
+      <motion.div
+        className="min-h-screen bg-background py-32 flex flex-col justify-between h-full"
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <HeroSection />
+        <ProductCarousel />
+        {/*<BackgroundBeams />*/}
+      </motion.div>
       <h2 className="text-center text-2xl md:text-4xl font-bold text-neutral-800 dark:text-neutral-200 mb-8">
         EU Funded Projects
       </h2>
-    </main>
+    </>
   )
 }
 
 const HeroSection: React.FC = () => (
-  <motion.div
-    className="container mx-auto text-center px-4"
-    initial={{ opacity: 0, y: -50 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.6 }}
-  >
-    <h1 className="text-4xl md:text-6xl font-bold text-gray-800 dark:text-white mb-4">
-      Transforming Ideas into Quantum Breakthroughs
+  <div className="container mx-auto text-center px-4">
+    <h1 className="mb-2 text-6xl lg:text-8xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-400">
+      Explore Our Solutions
     </h1>
-    <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-      Discover cutting-edge solutions designed to accelerate quantum computation, drug discovery, and fault-tolerant
-      computing.
-    </p>
-  </motion.div>
+    <Vortex />
+  </div>
 )
 
 const ProductCarousel: React.FC = () => {
   return (
-    <div className="mt-16">
-      <h2 className="text-center text-2xl md:text-4xl font-bold text-neutral-800 dark:text-neutral-200 mb-8">
-        Explore Our Solutions
+    <div className="mt-16 z-10">
+      <h2 className="text-center text-2xl md:text-4xl font-bold text-neutral-800 dark:text-neutral-200 mb-3">
+        Accelerating the Drug Discovery Pipeline
       </h2>
-      <BentoGrid className="lg:grid-rows-3 container">
+      <p className="container text-lg md:text-lg text-gray-400 text-center max-w-3xl mx-auto mb-4">
+        Access the latest in molecular dynamics, quantum chemistry and materials science with GPU accelerated solutions.
+      </p>
+      <BentoGrid className="container">
         {products.map((product) => (
           <BentoCard key={product.name} {...product} />
         ))}
       </BentoGrid>
+
+      <div className="container mt-16">
+        <h2 className="text-center text-2xl md:text-4xl font-bold text-neutral-800 dark:text-neutral-200 mb-4">
+          Optimization
+        </h2>
+        <p className="container text-lg md:text-lg text-gray-400 text-center max-w-3xl mx-auto mb-4">
+          Prepare you business for quantum computing with our highly scalable quadratic optimization toolkit ready to
+          deploy today.
+        </p>
+        <BentoCard key="qubo" {...qubo} />
+      </div>
     </div>
   )
 }

@@ -2,6 +2,7 @@ import { ChevronRight } from "lucide-react"
 import Link from "next/link"
 import ShinyButton from "@/components/ui/shiny-button"
 import WordPullUp from "@/components/ui/word-pull-up"
+import { TextHoverEffect } from "@/components/ui/text-hover-effect"
 
 export default function HeroSection() {
   return (

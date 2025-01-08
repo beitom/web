@@ -9,6 +9,7 @@ import { motion, useScroll } from "framer-motion"
 import { TechnologyGrid } from "@/components/landing/technologies-section"
 // import ParticlesBackground from "@/components/particles"
 import { Vortex } from "@/components/ui/vortex"
+import { NewsSection } from "@/components/landing/news"
 
 export default function Page() {
   const animationSettings = {
@@ -53,6 +54,10 @@ export default function Page() {
       {/* Other Sections */}
       <motion.div {...animationSettings}>
         <LearnMoreSection />
+      </motion.div>
+
+      <motion.div {...animationSettings}>
+        <NewsSection />
       </motion.div>
 
       {/*<motion.div {...animationSettings}>*/}

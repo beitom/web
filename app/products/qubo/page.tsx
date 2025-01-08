@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion"
 import { cn } from "@/lib/utils"
 import AnimatedGridPattern from "@/components/ui/animated-grid-pattern"
 import { StickyScroll } from "@/components/ui/sticky-scroll-reveal"
-import ShinyButton from "@/components/ui/shiny-button"
+import ShinyBox from "@/components/ui/shiny-box"
 import { CheckIcon } from "@radix-ui/react-icons"
 import { ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -54,14 +54,15 @@ const CheckItem = ({ title }: { title: string }) => {
     </li>
   )
 }
+import Link from "next/link"
 
 const content = [
   {
     title: "Quantum Optimization",
     description:
-      "Prepare your infrastructure today for the coming quantum revolution, leveraging quantum-inspired optimization solutions now.",
+      "Embrace the future of computing by integrating quantum-inspired QUBO solvers into your applications today. This approach not only enhances your current optimization capabilities but also ensures a seamless transition to quantum computing as the technology matures. By adopting quantum-ready workflows now, you position your infrastructure at the forefront of innovation, ready to leverage the full potential of quantum advancements.",
     content: (
-      <ShinyButton className="flex flex-col p-4 text-left">
+      <ShinyBox className="flex flex-col p-4 text-left">
         <p className="text-xl font-bold relative z-20 mt-2 text-white">Applications</p>
         <div className="text-neutral-200 mt-4 relative z-20 pb-4">
           Leverage quantum optimization across various industries:
@@ -72,17 +73,20 @@ const content = [
             <CheckItem title="Network Design: Improve performance and reduce costs." />
           </ul>
         </div>
-        <Button className="mt-3 rounded-lg" variant="ghost">
-          Learn More <ChevronRight />
-        </Button>
-      </ShinyButton>
+        <Link href="https://www.nature.com/articles/s42254-024-00770-9" passHref>
+          <Button className="mt-3 rounded-lg" variant="ghost">
+            Learn More <ChevronRight />
+          </Button>
+        </Link>
+      </ShinyBox>
     )
   },
   {
     title: "QUBO",
-    description: "Adopt QUBO (Quadratic Unconstrained Binary Optimization) for scalable, future-ready problem-solving.",
+    description:
+      "Adopt Quadratic Unconstrained Binary Optimization (QUBO) to enhance your problem-solving capabilities with scalable, future-ready solutions. QUBO models provide a unified framework for combinatorial optimization, enabling efficient solutions across various industries. By integrating QUBO solvers into your workflows, you prepare your infrastructure for seamless integration with emerging quantum technologies, ensuring adaptability and optimal performance as the computational landscape evolves.",
     content: (
-      <ShinyButton className="flex flex-col p-4 text-left">
+      <ShinyBox className="flex flex-col p-4 text-left">
         <p className="text-xl font-bold relative z-20 mt-2 text-white">Why QUBO?</p>
         <div className="text-neutral-200 mt-4 relative z-20 pb-4">
           QUBO provides a universal framework for encoding complex challenges:
@@ -92,17 +96,15 @@ const content = [
             <CheckItem title="Efficiently handles large-scale, complex optimization tasks." />
           </ul>
         </div>
-        <Button className="mt-3 rounded-lg" variant="ghost">
-          Download Whitepaper <ChevronRight />
-        </Button>
-      </ShinyButton>
+      </ShinyBox>
     )
   },
   {
     title: "Why Choose BEIT’s QUBO Solver?",
-    description: "Achieve optimal outcomes faster and more reliably with BEIT’s quantum-inspired solver.",
+    description:
+      "Experience unparalleled optimization performance with BEIT’s quantum-inspired QUBO solver. Our solver guarantees optimal solutions for your complex combinatorial problems, ensuring accuracy and efficiency. Leveraging GPU acceleration, it delivers rapid, deterministic computations, significantly reducing processing times. Compatible with D-Wave’s “dimod” library and Chimera architecture, our solver integrates seamlessly into your existing workflows, facilitating a smooth transition to quantum-ready infrastructure. ",
     content: (
-      <ShinyButton className="flex flex-col p-4 text-left">
+      <ShinyBox className="flex flex-col p-4 text-left">
         <p className="text-xl font-bold relative z-20 mt-2 text-white">Key Benefits</p>
         <div className="text-neutral-200 mt-4 relative z-20">
           <ul className="list-none mt-2">
@@ -115,14 +117,15 @@ const content = [
         <p className="text-neutral-300 mt-4 relative z-20 text-sm">
           Position yourself for a seamless transition to quantum hardware as it becomes available.
         </p>
-      </ShinyButton>
+      </ShinyBox>
     )
   },
   {
     title: "Deploy on AWS",
-    description: "Run BEIT's QUBO Solver on AWS, harnessing scalable cloud resources and familiar infrastructure.",
+    description:
+      "Deploy BEIT’s QUBO Solver on AWS to leverage scalable cloud resources and integrate seamlessly with your existing infrastructure. Our solver is available as a Software as a Service (SaaS) solution on the AWS Marketplace, ensuring easy deployment and management. With pricing at $0.30 per request, you can efficiently scale your optimization tasks without significant upfront investments.",
     content: (
-      <ShinyButton className="flex flex-col p-4 text-left w-full">
+      <ShinyBox className="flex flex-col p-4 text-left w-full">
         <p className="text-xl font-bold relative z-20 mt-2 text-white">AWS Integration</p>
         <div className="text-neutral-200 mt-4 relative z-20">
           Achieve optimization results quickly and cost-effectively:
@@ -133,10 +136,12 @@ const content = [
             <CheckItem title="$0.3 per request, ensuring cost transparency." />
           </ul>
         </div>
-        <Button className="mt-3 rounded-lg" variant="ghost">
-          Get Started on AWS <ChevronRight />
-        </Button>
-      </ShinyButton>
+        <Link href="https://aws.amazon.com/marketplace/pp/prodview-z3oernljkydpk" passHref>
+          <Button className="mt-3 rounded-lg text-left justify-start" variant="ghost">
+            Get Started on AWS <ChevronRight />
+          </Button>
+        </Link>
+      </ShinyBox>
     )
   },
   {
@@ -144,7 +149,7 @@ const content = [
     description:
       "Start building your quantum foundations now, ensuring a smooth leap into fully fault-tolerant quantum computing.",
     content: (
-      <ShinyButton className="flex flex-col p-4 text-left">
+      <ShinyBox className="flex flex-col p-4 text-left">
         <p className="text-xl font-bold relative z-20 mt-2 text-white">Future-Proof Your Operations</p>
         <div className="text-neutral-200 mt-4 relative z-20 pb-4">
           Gain a competitive edge in tomorrow’s computational landscape:
@@ -154,10 +159,12 @@ const content = [
             <CheckItem title="Maintain a unified approach across classical and quantum regimes." />
           </ul>
         </div>
-        <Button className="mt-3 rounded-lg" variant="ghost">
-          Contact Sales <ChevronRight />
-        </Button>
-      </ShinyButton>
+        <Link href="/contact" passHref>
+          <Button className="mt-3 rounded-lg" variant="ghost">
+            Contact Sales <ChevronRight />
+          </Button>
+        </Link>
+      </ShinyBox>
     )
   }
 ]

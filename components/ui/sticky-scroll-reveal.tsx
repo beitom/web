@@ -22,7 +22,7 @@ export const StickyScroll = ({
     // uncomment line 22 and comment line 23 if you DONT want the overflow container and want to have it change on the entire page scroll
     target: ref,
     // container: ref,
-    offset: ["start start", "end 20%"]
+    offset: ["start start", "end 0%"]
   })
   const cardLength = content.length
 
@@ -40,7 +40,7 @@ export const StickyScroll = ({
 
   return (
     <>
-      <div className="px-2 bg-black pb-48">
+      <div className="px-2 bg-black pb-0 sm:pb-16">
         <motion.div
           animate={{
             backgroundColor: "var(--black)"
@@ -55,8 +55,8 @@ export const StickyScroll = ({
 
                 const cardVariants = {
                   inactive: {
-                    opacity: 0.1,
-                    y: 50, // slightly lower opacity and shifted down when inactive
+                    opacity: 0.5,
+                    scale: 0.9, // slightly lower opacity and shifted down when inactive
                     transition: {
                       duration: 0.4,
                       ease: "easeOut"
@@ -64,7 +64,7 @@ export const StickyScroll = ({
                   },
                   active: {
                     opacity: 1,
-                    y: 0, // comes into correct position when active
+                    scale: 1, // comes into correct position when active
                     transition: {
                       duration: 0.4,
                       ease: "easeOut"
@@ -77,10 +77,14 @@ export const StickyScroll = ({
                     key={item.title + index}
                     className={cn("mb-16 md:mb-32")}
                     variants={cardVariants}
+                    // whileInView={{ opacity: 1, y: 0 }}
+                    // initial={{ opacity: 0, y: 50 }}
+                    // transition={{ duration: 0.4 }}
+                    // viewport={{ once: false, amount: 0.25 }}
                     animate={isActive ? "active" : "inactive"}
                     initial="inactive"
                   >
-                    <motion.h2 className="text-2xl font-bold text-slate-100 sticky top-0 md:top-24 border-b py-3 md:py-6 bg-black">
+                    <motion.h2 className="z-20 pt-8 md:relative text-2xl font-bold text-slate-100 sticky top-0 border-b py-3 md:py-6 bg-black">
                       {item.title}
                     </motion.h2>
                     <motion.p className="text-kg text-slate-300 max-w-sm mt-10">{item.description}</motion.p>

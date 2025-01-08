@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 export default function LearnMoreSection() {
   return (
     <section className="container mx-auto px-4 lg:px-8 py-16" id="learnmore">
-      <h2 className="text-4xl font-bold text-center mb-10">Our Mission</h2>
+      <h2 className="text-4xl md:text-6xl font-bold text-center mb-10 text-neutral-200 font-sans">Our Mission</h2>
       <div className="z-10 relative backdrop-blur-lg drop-shadow border rounded-lg p-8 md:p-12">
         <h1 className="text-white text-3xl mb-2 font-bold">
           Fast-Tracking the Quantum Era with Algorithmic Innovations
