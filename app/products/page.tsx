@@ -7,9 +7,6 @@ import { GiMeshNetwork } from "react-icons/gi"
 import { SiMoleculer } from "react-icons/si"
 import { PiCpuThin } from "react-icons/pi"
 import { Vortex } from "@/components/ui/vortex"
-import { cn } from "@/lib/utils"
-import AnimatedGridPattern from "@/components/ui/animated-grid-pattern"
-import { BackgroundBeams } from "@/components/ui/background-beams"
 
 const products = [
   {
