@@ -13,7 +13,7 @@ export interface NewsData {
 
 export enum NewsCategories {
   Media = "Media",
-  Interview = "Interview",
+  Interview = "Interviews",
   Press = "Press",
   Announcements = "Announcements",
   Events = "Events",
@@ -71,6 +71,15 @@ const newsData: NewsData[] = [
     date: "2021-3-24",
     category: NewsCategories.Announcements,
     image: "/assets/images/news/qiskit.jpg"
+  },
+  {
+    title: "BEIT Selected as One of Four QC Technology Pioneers by the World Economic Forum",
+    link: "https://www.insidequantumtechnology.com/news-archive/four-quantum-technology-companies-on-the-world-economic-forum-2022-technology-pioneers-list/",
+    description:
+      "The World Economic Forum bestows this honour each year on the most innovative and impactful companies worldwide. The Technology Pioneers community, launched in 2000, comprises early-to growth-stage companies from around the world that are involved in the design, development and deployment of new technologies and innovations, and are poised to have a significant impact on business and society.",
+    category: NewsCategories.Announcements,
+    date: "2022-5-10",
+    image: "/assets/images/news/wef.jpg"
   }
 ]
 

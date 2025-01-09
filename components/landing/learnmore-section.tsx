@@ -1,12 +1,15 @@
 import { ArrowRightIcon } from "@radix-ui/react-icons"
 import React from "react"
 import { Button } from "@/components/ui/button"
+import Link from "next/link"
+import { GoRocket } from "react-icons/go"
+import { LiaAtomSolid } from "react-icons/lia"
 
 export default function LearnMoreSection() {
   return (
     <section className="container mx-auto px-4 lg:px-8 py-16" id="learnmore">
       <h2 className="text-4xl md:text-6xl font-bold text-center mb-10 text-neutral-200 font-sans">About Us</h2>
-      <div className="z-10 relative backdrop-blur-lg drop-shadow border rounded-lg p-8 md:p-12">
+      <div className="z-10 relative backdrop-blur-lg p-8 md:p-12 border rounded-xl">
         <h1 className="text-white text-3xl mb-2 font-bold">
           Fast-Tracking the Quantum Era with Algorithmic Innovations
         </h1>
@@ -18,14 +21,19 @@ export default function LearnMoreSection() {
           computation and harnessing its potential to solve complex problems in science and industry.
         </p>
 
-        <Button
-          variant="outline"
-          // href="#"
-          // target="_blank"
-          // className="inline-flex justify-center items-center py-2.5 px-5 text-base font-medium text-center text-white rounded-lg bg-gray-950 border border-gray-700 hover:bg-gray-600 focus:ring-4 focus:ring-blue-900"
-        >
-          See our Research <ArrowRightIcon className="ms-2" />
-        </Button>
+        <div className="flex flex-row flex-wrap gap-2">
+          <Link href="/research" passHref>
+            <Button variant="ghost">
+              See our Research <LiaAtomSolid className="ms-2" />
+            </Button>
+          </Link>
+
+          <Link href="/products" passHref>
+            <Button variant="ghost">
+              Discover our Technology <GoRocket className="ms-2" />
+            </Button>
+          </Link>
+        </div>
       </div>
     </section>
   )

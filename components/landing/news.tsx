@@ -9,7 +9,9 @@ export function NewsSection() {
 
   return (
     <div className="w-full h-full py-20 container">
-      <h2 className="text-4xl md:text-6xl font-bold text-center mb-10 text-neutral-200 font-sans">Latest News</h2>
+      <h2 className="text-4xl md:text-6xl font-bold text-center mb-4 text-neutral-200 font-sans">
+        Latest News & Research
+      </h2>
       <Carousel items={cards} />
     </div>
   )
