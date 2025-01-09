@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button"
 import { PiArrowRightThin } from "react-icons/pi"
 import { NewsData } from "@/data/news.data"
 import Link from "next/link"
+import AnimatedGridPattern from "@/components/ui/animated-grid-pattern"
 
 interface CarouselProps {
   items: JSX.Element[]
@@ -172,7 +173,17 @@ export const Card = ({ card, index, layout = false }: { card: NewsData; index: n
         // layoutId={layout ? `card-${card.title}` : undefined}
         className="flex flex-col justify-between rounded-3xl bg-gray-100 dark:bg-neutral-900 w-56 h-[25rem] md:w-96 text-wrap overflow-hidden relative z-10"
       >
-        <div className=" absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />
+        <div
+          className="
+          pointer-events-none 
+          absolute inset-0 
+          bg-gradient-to-b 
+          from-black/85
+          to-transparent 
+          z-30
+        "
+        />
+        {/*<div className=" absolute h-full top-0 inset-x-0 bg-gradient-to-b from-black/50 via-transparent to-transparent z-30 pointer-events-none" />*/}
         <div className="relative z-40 p-8 rounded-3xl">
           <motion.p
             layoutId={layout ? `category-${card.category}` : undefined}
@@ -188,7 +199,13 @@ export const Card = ({ card, index, layout = false }: { card: NewsData; index: n
           </motion.p>
         </div>
 
-        <div className="w-full flex flex-row justify-end p-4 z-[11]">
+        <div className="w-full flex flex-row justify-between p-4 z-[40]">
+          <motion.p
+            layoutId={layout ? `date-${card.date}` : undefined}
+            className="text-white text-sm md:text-base font-medium font-sans text-left mt-2"
+          >
+            {new Date(card.date).toDateString()}
+          </motion.p>
           <Link href={card.link} passHref>
             <Button variant="outline" className="rounded-full h-10 w-10 p-0">
               <PiArrowRightThin />
@@ -196,8 +213,19 @@ export const Card = ({ card, index, layout = false }: { card: NewsData; index: n
           </Link>
         </div>
 
-        {card?.image && (
+        {card?.image ? (
           <BlurImage src={card.image} alt={card.title} fill className="object-cover absolute z-10 inset-0" />
+        ) : (
+          <AnimatedGridPattern
+            numSquares={10}
+            maxOpacity={0.1}
+            duration={1}
+            repeatDelay={0.1}
+            className={cn(
+              "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]",
+              "inset-x-0 inset-y-[-100%]"
+            )}
+          />
         )}
       </div>
     </>
@@ -207,8 +235,7 @@ export const Card = ({ card, index, layout = false }: { card: NewsData; index: n
 export const BlurImage = ({ height, width, src, className, alt, ...rest }: ImageProps) => {
   return (
     <Image
-      className={cn("transition duration-300 blur-[2px] opacity-50", className)}
-      // onLoad={() => setLoading(false)}
+      className={cn("transition duration-300 opacity-70", className)}
       src={src}
       width={width}
       height={height}

@@ -13,6 +13,7 @@ export interface NewsData {
 
 export enum NewsCategories {
   Media = "Media",
+  Interview = "Interview",
   Press = "Press",
   Announcements = "Announcements",
   Events = "Events",
@@ -32,7 +33,7 @@ const newsData: NewsData[] = [
   {
     title: "Willow: Quantum Computing and the Overhyped Revolution",
     date: "2024-12-26",
-    category: NewsCategories.Media,
+    category: NewsCategories.Interview,
     image: "/assets/images/news/willow.jpg",
     description:
       "The mind-blowing numbers about the capabilities of Google's new quantum computer Willow are a great, if largely PR move, experts say. Although the quantum revolution seems to be getting closer, it still remains a prospect of the coming years, not days.",
@@ -42,8 +43,34 @@ const newsData: NewsData[] = [
     title: "BEIT selected by the European Innovation Council to receive Accelerator Investment",
     date: "2023-3-29",
     category: NewsCategories.Announcements,
+    image: "/assets/images/news/eic.png",
     description: "BEIT selected by the European Innovation Council to receive Accelerator Investment of €2.5m.",
     link: "https://eic.ec.europa.eu/news/european-innovation-council-new-group-deep-tech-start-ups-receive-accelerator-investments-increase-2023-03-29_en"
+  },
+  {
+    title: "BEIT Team Wins Gold Honours at International Gamma Mathematics Olympiad",
+    description:
+      "We are proud to announce that two of our employees, Witold Jarnicki and Jan Tułowiecki, achieved Gold Honours at International Gamma Mathematics Olympiad 2022 (IGMO). This event is an international open-for-all individual online competition taking place over two rounds. The first round consists of fifteen integer answer type questions and one proof-based problem, while the second round spans two days, each featuring three hard proof-based problems.",
+    image: "/assets/images/other_images/resized_igmo_certs2.jpg",
+    category: NewsCategories.Announcements,
+    date: "2022-8-23",
+    link: "https://beit.tech/blog/igmo-2022-results.html"
+  },
+  {
+    link: "https://www.classiq.io/insights/classiq-coding-competition-results",
+    title: "BEIT Engineers Win Gold & Silver in Classiq Coding Competition",
+    description: "",
+    category: NewsCategories.Announcements,
+    date: "2022-6-14",
+    image: "/assets/images/news/classiq.webp"
+  },
+  {
+    link: "https://medium.com/qiskit/presenting-the-winners-of-the-first-icpc-quantum-computing-challenge-b16a448a82e2",
+    title: "BEIT Engineer Wins IBM ICPC Quantum Computing Challenge",
+    description: "",
+    date: "2021-3-24",
+    category: NewsCategories.Announcements,
+    image: "/assets/images/news/qiskit.jpg"
   }
 ]
 

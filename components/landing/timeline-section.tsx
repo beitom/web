@@ -3,7 +3,7 @@ import { Timeline } from "@/components/ui/timeline"
 
 function Hyperlink({ link, text }: { link: string; text: string }) {
   return (
-    <a href={link} className="text-blue-500 hover:underline">
+    <a href={link} className="text-blue-500 hover:underline" target="_blank">
       {text}
     </a>
   )
@@ -19,11 +19,11 @@ export function BeitTimeline() {
           <p className="text-neutral-800 dark:text-neutral-200 font-normal mb-8">
             BEIT was founded in 2017 in Krakow, Poland, by three experienced professionals with strong backgrounds in
             technology and academia. The founders had previously held important roles at major organizations such as
-            Google, CERN, Motorola, and Allegro, Poland’s largest e-commerce platform. Their combined experiences
-            covered areas critical to advanced computing, including quantum physics, network systems, and algorithm
-            development. They also brought academic insights from their time as professors and researchers. This mix of
-            industry knowledge and academic expertise provided a solid foundation for BEIT to innovate in the quantum
-            computing field.
+            Google, CERN, Motorola, and Allegro (Poland’s largest e-commerce platform). Their combined experiences
+            covered areas critical to advanced computing, including quantum physics, algorithm development, and
+            technical management. They also brought academic insights from their time as professors and researchers.
+            This mix of industry knowledge and academic expertise provided a solid foundation for BEIT to innovate in
+            the quantum computing field.
           </p>
           <div className="grid grid-cols-3 gap-6 mt-8">
             <div className="text-center">
@@ -71,7 +71,7 @@ export function BeitTimeline() {
       content: (
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 font-normal mb-8">
-            Successfully graduated from the
+            In 2019, BEIT successfully graduated from the
             <Hyperlink link="https://creativedestructionlab.com/companies/beit/" text=" Creative Destruction Lab's " />
             quantum stream, marking our early commitment to quantum innovation.
           </p>
@@ -84,7 +84,7 @@ export function BeitTimeline() {
       content: (
         <div>
           <p className="text-neutral-800 dark:text-neutral-200 font-normal mb-8">
-            Secured our initial funding of
+            We secured our pre-seed funding of
             <Hyperlink
               link="https://www.linkedin.com/pulse/beit-inc-raises-14m-seed-funding-paulina-mazurek/"
               text=" $1.4 million USD "

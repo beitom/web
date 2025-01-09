@@ -234,5 +234,4 @@ const createNormalizedTitleMap = (pubs: Publication[]): Record<string, number> =
 }
 
 export const normalizedTitleMap = createNormalizedTitleMap(publications)
-console.log(normalizedTitleMap)
 export default publications
