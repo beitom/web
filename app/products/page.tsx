@@ -99,7 +99,7 @@ const ProductCarousel: React.FC = () => {
 
       <div className="container mt-16">
         <h2 className="text-center text-2xl md:text-4xl font-bold text-neutral-800 dark:text-neutral-200 mb-4">
-          Optimization
+          Quantum Inspired Optimization
         </h2>
         <p className="container text-lg md:text-lg text-gray-400 text-center max-w-3xl mx-auto mb-4">
           Prepare you business for quantum computing with our highly scalable quadratic optimization toolkit ready to
