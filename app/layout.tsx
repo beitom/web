@@ -29,7 +29,7 @@ export default function RootLayout({
         <meta property="og:url" content="https://beit.tech" />
         <meta property="og:description" content="Quantum Technology Experts" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://beit-mu.vercel.app/assets/images/other_images/og.jpg" />
+        <meta property="og:image" content="https://beit-mu.vercel.app/assets/images/og/og.jpg" />
         <title>BEIT | Quantum Technology Experts</title>
         <link rel="icon" href="/assets/images/other_images/beit.logo.white.svg" />
       </head>
