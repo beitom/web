@@ -7,6 +7,7 @@ import { GiMeshNetwork } from "react-icons/gi"
 import { SiMoleculer } from "react-icons/si"
 import { PiCpuThin } from "react-icons/pi"
 import { Vortex } from "@/components/ui/vortex"
+import Image, { ImageProps } from "next/image"
 
 const products = [
   {
@@ -62,50 +63,83 @@ export default function LandingPage() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <HeroSection />
-        <ProductCarousel />
+        <div className="container mx-auto text-center px-4">
+          <h1 className="mb-2 text-6xl lg:text-8xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-400">
+            Explore Our Solutions
+          </h1>
+          {/*<Vortex />*/}
+        </div>
+        <DrugDiscoveryProducts />
         {/*<BackgroundBeams />*/}
       </motion.div>
-      <h2 className="text-center text-2xl md:text-4xl font-bold text-neutral-800 dark:text-neutral-200 mb-8">
-        EU Funded Projects
-      </h2>
+      <OptimizationProducts />
+      <EUFundedProjects />
     </>
   )
 }
 
-const HeroSection: React.FC = () => (
-  <div className="container mx-auto text-center px-4">
-    <h1 className="mb-2 text-6xl lg:text-8xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-400">
-      Explore Our Solutions
-    </h1>
-    <Vortex />
-  </div>
-)
-
-const ProductCarousel: React.FC = () => {
+const DrugDiscoveryProducts: React.FC = () => {
   return (
     <div className="mt-16 z-10">
       <h2 className="text-center text-2xl md:text-4xl font-bold text-neutral-800 dark:text-neutral-200 mb-3">
-        Accelerating the Drug Discovery Pipeline
+        Accelerated Drug Discovery
       </h2>
       <p className="container text-lg md:text-lg text-gray-400 text-center max-w-3xl mx-auto mb-4">
-        Access the latest in molecular dynamics, quantum chemistry and materials science with GPU accelerated solutions.
+        Access the latest state-of-the-art methods in molecular dynamics, quantum chemistry and materials science with
+        GPU and wafer-scale accelerated solutions.
       </p>
       <BentoGrid className="container">
         {products.map((product) => (
           <BentoCard key={product.name} {...product} />
         ))}
       </BentoGrid>
+    </div>
+  )
+}
 
-      <div className="container mt-16">
-        <h2 className="text-center text-2xl md:text-4xl font-bold text-neutral-800 dark:text-neutral-200 mb-4">
-          Quantum Inspired Optimization
-        </h2>
-        <p className="container text-lg md:text-lg text-gray-400 text-center max-w-3xl mx-auto mb-4">
-          Prepare you business for quantum computing with our highly scalable quadratic optimization toolkit ready to
-          deploy today.
-        </p>
-        <BentoCard key="qubo" {...qubo} />
+const OptimizationProducts: React.FC = () => {
+  return (
+    <div className="container mt-16">
+      <h2 className="text-center text-2xl md:text-4xl font-bold text-neutral-800 dark:text-neutral-200 mb-4">
+        Quantum Inspired Optimization
+      </h2>
+      <p className="container text-lg md:text-lg text-gray-400 text-center max-w-3xl mx-auto mb-4">
+        Prepare you business for quantum computing with our highly scalable quadratic optimization toolkit ready to
+        deploy today.
+      </p>
+      <BentoCard key="qubo" {...qubo} />
+    </div>
+  )
+}
+
+// const EUFlagBanner: React.FC = () => {
+//   return <Image src="/assets/images/other_images/sponsorzy.projektu.png" alt="EU Flag" />
+// }
+
+const EICLogo: React.FC = () => {
+  return (
+    <Image
+      src="/assets/images/other_images/EIC-logo-CoFundedBy-WhiteText_EN.png"
+      alt="EU Flag"
+      className="border rounded-lg"
+      width={3844}
+      height={512}
+    />
+  )
+}
+
+const EUFundedProjects: React.FC = () => {
+  return (
+    <div className="container mt-16">
+      <h2 className="text-center text-2xl md:text-4xl font-bold text-neutral-800 dark:text-neutral-200 mb-4">
+        EU Funded Projects
+      </h2>
+      <p className="container text-lg md:text-lg text-gray-400 text-center max-w-3xl mx-auto mb-4">
+        We are proud to be supported by the European Innovation Council. Our projects are at the forefront of innovation
+        in the European Union.
+      </p>
+      <div className="w-full flex justify-center">
+        <EICLogo />
       </div>
     </div>
   )

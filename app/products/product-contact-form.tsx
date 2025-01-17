@@ -9,7 +9,8 @@ import {
   DrawerTitle,
   DrawerDescription,
   DrawerFooter,
-  Drawer
+  Drawer,
+  DrawerTrigger
 } from "@/components/ui/drawer"
 import { PaperPlaneIcon } from "@radix-ui/react-icons"
 import { useForm, ValidationError } from "@formspree/react"
@@ -73,10 +74,10 @@ export default function ProductContactButton({ productName }: { productName: str
   const [isOpen, setIsOpen] = useState(false)
   return (
     <>
-      <div className="bg-black pb-8 flex flex-row w-full justify-center">
+      <div className="bg-black pb-8 flex flex-row w-full justify-center container">
         <Button
           onClick={() => setIsOpen(true)}
-          className="opacity-0 animate-fade-in [--animation-delay:1500ms] sm:fixed sm:bottom-4 sm:right-4 z-50 inline-flex h-12 overflow-hidden p-[1px] rounded-xl focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
+          className="opacity-0 animate-fade-in [--animation-delay:1500ms] w-full sm:w-auto sm:fixed sm:bottom-4 sm:right-4 z-40 inline-flex h-12 overflow-hidden p-[1px] rounded-xl focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50"
         >
           <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
           <span className="inline-flex space-x-2 h-full w-full cursor-pointer items-center justify-center rounded-xl bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
@@ -89,6 +90,18 @@ export default function ProductContactButton({ productName }: { productName: str
       {/* Drawer with contact form */}
       <Drawer open={isOpen} onOpenChange={setIsOpen}>
         <ProductContactForm productName="BDocker" onClose={() => setIsOpen(false)} />
+      </Drawer>
+    </>
+  )
+}
+
+export function CustomDemoButton({ productName, content }: { productName: string; content: React.ReactNode }) {
+  const [isOpen, setIsOpen] = useState(false)
+  return (
+    <>
+      <Drawer open={isOpen} onOpenChange={setIsOpen}>
+        <DrawerTrigger asChild>{content}</DrawerTrigger>
+        <ProductContactForm productName={productName} onClose={() => setIsOpen(false)} />
       </Drawer>
     </>
   )

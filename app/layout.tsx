@@ -13,7 +13,7 @@ const fontSans = FontSans({
 })
 export const metadata: Metadata = {
   title: "BEIT Inc.",
-  description: "Quantum Technology Experts"
+  description: "BEIT | Quantum Technology Experts"
 }
 
 export default function RootLayout({
@@ -23,6 +23,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className="dark">
+      <head>
+        <meta property="og:title" content="BEIT | Quantum Technology Experts" />
+        <meta property="og:site_name" content="BEIT Inc." />
+        <meta property="og:url" content="https://beit.tech" />
+        <meta property="og:description" content="Quantum Technology Experts" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://beit-mu.vercel.app/assets/images/other_images/og.jpg" />
+        <title>BEIT | Quantum Technology Experts</title>
+        <link rel="icon" href="/assets/images/other_images/beit.logo.white.svg" />
+      </head>
       <body className={cn("bg-background min-h-screen font-sans antialiased", fontSans.variable)}>
         <ThemeProvider attribute="class" defaultTheme="dark" forcedTheme="dark" disableTransitionOnChange>
           <SiteHeader />

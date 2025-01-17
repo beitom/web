@@ -129,7 +129,7 @@ export function SiteHeader() {
     <>
       <div
         className={cn(
-          "animate-fade-in ease-linear fixed inset-x-0 left-[calc(100vw-100%)] rounded-3xl z-40 mx-14 flex h-[60px] items-center justify-between border border-border bg-card px-4 saturate-100 transition-all duration-200 header-md:mx-auto header-md:max-w-[768px] header-md:px-8 header-lg:max-w-[1168px]",
+          "animate-fade-in ease-linear fixed inset-x-0 left-[calc(100vw-100%)] rounded-3xl z-50 mx-14 flex h-[60px] items-center justify-between border border-border bg-card px-4 saturate-100 transition-all duration-200 header-md:mx-auto header-md:max-w-[768px] header-md:px-8 header-lg:max-w-[1168px]",
           isScrolled && "border-transparent bg-transparent mx-6 top-4",
           !isScrolled && "bottom-4 sm:top-4 bg-black"
         )}
