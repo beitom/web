@@ -70,7 +70,7 @@ function ProductContactForm({ productName, onClose }: ContactFormProps) {
   )
 }
 
-export default function ProductContactButton({ productName }: { productName: string }) {
+export default function RequestADemoButton({ productName }: { productName: string }) {
   const [isOpen, setIsOpen] = useState(false)
   return (
     <>
@@ -89,7 +89,7 @@ export default function ProductContactButton({ productName }: { productName: str
 
       {/* Drawer with contact form */}
       <Drawer open={isOpen} onOpenChange={setIsOpen}>
-        <ProductContactForm productName="BDocker" onClose={() => setIsOpen(false)} />
+        <ProductContactForm productName={productName} onClose={() => setIsOpen(false)} />
       </Drawer>
     </>
   )

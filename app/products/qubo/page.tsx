@@ -1,62 +1,18 @@
 "use client"
 
-import { motion, useScroll, useTransform } from "framer-motion"
 import { cn } from "@/lib/utils"
 import AnimatedGridPattern from "@/components/ui/animated-grid-pattern"
-import { StickyScroll } from "@/components/ui/sticky-scroll-reveal"
 import ShinyBox from "@/components/ui/shiny-box"
-import { CheckIcon } from "@radix-ui/react-icons"
 import { ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { CheckItem } from "@/components/ui/check-item"
 
-export default function GridBackgroundDemo() {
-  return (
-    <>
-      <div className="h-screen w-full bg-black  relative flex items-center justify-center">
-        {/* Radial gradient for the container to give a faded look */}
-        {/*<div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>*/}
-
-        <motion.div
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="relative text-center"
-        >
-          <h1 className="text-6xl lg:text-8xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500">
-            QUBO Solver
-          </h1>
-          <p className="px-4 mt-4 text-2xl lg:text-3xl text-white">Quantum Ready Optimization</p>
-          <p className="px-4 mt-2">
-            Prepare your business for quantum computing, with a solution that offers benefits today!
-          </p>
-        </motion.div>
-        <AnimatedGridPattern
-          numSquares={100}
-          maxOpacity={0.1}
-          duration={1}
-          repeatDelay={0.1}
-          className={cn(
-            "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]",
-            "inset-x-0 inset-y-[-30%] h-[200%]"
-          )}
-        />
-      </div>
-      <ProductInfo />
-    </>
-  )
-}
-
-const CheckItem = ({ title }: { title: string }) => {
-  return (
-    <li className="flex gap-2 items-start">
-      <CheckIcon />
-      <p className="text-white">{title}</p>
-    </li>
-  )
-}
 import Link from "next/link"
+import ProductPage from "@/components/product-page"
+import { CustomDemoButton } from "@/components/product-contact-form"
 
-const content = [
+const productName = "QUBO Solver"
+const features = [
   {
     title: "Quantum Optimization",
     description:
@@ -160,15 +116,40 @@ const content = [
           </ul>
         </div>
         <Link href="/contact" passHref>
-          <Button className="mt-3 rounded-lg" variant="ghost">
-            Contact Sales <ChevronRight />
-          </Button>
+          <CustomDemoButton
+            productName={productName}
+            content={
+              <Button className="mt-3 rounded-lg" variant="ghost">
+                Contact Sales <ChevronRight />
+              </Button>
+            }
+          />
         </Link>
       </ShinyBox>
     )
   }
 ]
 
-function ProductInfo() {
-  return <StickyScroll content={content} />
+export default function Page() {
+  return (
+    <ProductPage
+      productName={productName}
+      productDescription="Quantum Ready Optimization"
+      productBackground={
+        <div className="h-full w-full bg-black relative">
+          <AnimatedGridPattern
+            numSquares={100}
+            maxOpacity={0.1}
+            duration={1}
+            repeatDelay={0.1}
+            className={cn(
+              "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]",
+              "inset-x-0 inset-y-[-30%] h-[200%]"
+            )}
+          />
+        </div>
+      }
+      features={features}
+    />
+  )
 }

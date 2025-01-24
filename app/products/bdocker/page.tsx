@@ -1,27 +1,18 @@
 "use client"
 
-import { motion, useScroll, useTransform } from "framer-motion"
-import { StickyScroll } from "@/components/ui/sticky-scroll-reveal"
 import ShinyBox from "@/components/ui/shiny-box"
-import { CheckIcon } from "@radix-ui/react-icons"
 import { ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import ProductContactButton, { CustomDemoButton } from "@/app/products/product-contact-form"
+import { CustomDemoButton } from "@/components/product-contact-form"
 import { BenchmarkTable } from "@/app/products/qubo/benchmark/table"
+import ProductPage, { ProductBackgroundImage } from "@/components/product-page"
+import { CheckItem } from "@/components/ui/check-item"
 
-const CheckItem = ({ title }: { title: string }) => (
-  <li className="flex items-start gap-2">
-    <div className="flex-initial w-4 h-4 flex justify-center items-center">
-      <CheckIcon className="w-4 h-4 text-white" />
-    </div>
-    <p className="text-white">{title}</p>
-  </li>
-)
-
+const productName = "BDocker"
 const features = [
   {
-    title: "Dock with BDocker",
+    title: "What is BDocker?",
     description:
       "Bdocker simulates molecular docking for ligand-protein interactions by maximizing the geometric similarity between interacting moieties. BDocker accelerates the process of screening candidate drug molecules in early stages of computational drug design.",
     descriptionContent: (
@@ -43,7 +34,7 @@ const features = [
           </ul>
         </div>
         <CustomDemoButton
-          productName="BDocker"
+          productName={productName}
           content={
             <Button className="mt-3 rounded-lg" variant="ghost">
               Request a demo <ChevronRight />
@@ -108,58 +99,18 @@ const features = [
             <CheckItem title="Continuously updated features and capabilities." />
           </ul>
         </div>
-        {/*<Link href="/features/aws-integration" passHref>*/}
-        {/*<Button className="mt-3 rounded-lg" variant="ghost">*/}
-        {/*  Join the Waitlist <ChevronRight />*/}
-        {/*</Button>*/}
-        {/*</Link>*/}
       </ShinyBox>
     )
   }
 ]
 
-function ProductInfo() {
-  return <StickyScroll content={features} />
-}
-
-export default function HeroSection() {
-  const { scrollY } = useScroll()
-
+export default function Page() {
   return (
-    <>
-      <section className="relative h-screen flex items-center justify-center">
-        {/* Background GIF as an image */}
-        <motion.img
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          style={{
-            y: useTransform(scrollY, [0, 1000], [0, 500]),
-            opacity: useTransform(scrollY, [0, 1000], [1, 0])
-          }}
-          transition={{ duration: 0.8 }}
-          src="/assets/images/products/bdocker/im_4.png"
-          alt="Molecular Background"
-          className="absolute inset-x-0 md:inset-0 md:bottom-0 translate-y-64 md:translate-y-0 w-auto h-full brightness-50 object-cover"
-        />
-        {/*/!* Optional dark overlay for better text readability *!/*/}
-        {/*<div className="absolute inset-0 bg-black bg-opacity-50"></div>*/}
-        <motion.div
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="relative text-center"
-        >
-          <h1 className="text-6xl lg:text-8xl font-bold relative z-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-500">
-            BDocker
-          </h1>
-          <p className="mt-4 text-2xl lg:text-3xl text-white">The state-of-the-art toolkit for molecular docking</p>
-        </motion.div>
-      </section>
-      <div className="sm:container">
-        <ProductInfo />
-      </div>
-
-      <ProductContactButton productName="BDocker" />
-    </>
+    <ProductPage
+      productName={productName}
+      productDescription="State-of-the-art Molecular Docking Solution"
+      productBackground={<ProductBackgroundImage src="/assets/images/products/bdocker/im_4.png" alt={productName} />}
+      features={features}
+    />
   )
 }

@@ -6,7 +6,6 @@ import { SiGrapheneos } from "react-icons/si"
 import { GiMeshNetwork } from "react-icons/gi"
 import { SiMoleculer } from "react-icons/si"
 import { PiCpuThin } from "react-icons/pi"
-import { Vortex } from "@/components/ui/vortex"
 import Image, { ImageProps } from "next/image"
 
 const products = [

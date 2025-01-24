@@ -4,6 +4,7 @@ import React from "react"
 import { notFound } from "next/navigation"
 import { motion } from "framer-motion"
 import { InlineMath } from "react-katex"
+import "katex/dist/katex.min.css"
 import { FileText, LinkIcon, Presentation, Video } from "lucide-react"
 
 import publications, { normalizedTitleMap, Publication } from "@/data/publications.data"

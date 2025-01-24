@@ -6,6 +6,7 @@ import "@/app/globals.css"
 import React from "react"
 import { SiteHeader } from "@/components/site-header-xyz"
 import { SiteFooter } from "@/components/site-footer"
+import Script from "next/script"
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -34,6 +35,7 @@ export default function RootLayout({
         <link rel="icon" href="/assets/images/other_images/beit.logo.white.svg" />
       </head>
       <body className={cn("bg-background min-h-screen font-sans antialiased", fontSans.variable)}>
+        <Script src="/js/3Dmol-min.js" strategy="beforeInteractive" />
         <ThemeProvider attribute="class" defaultTheme="dark" forcedTheme="dark" disableTransitionOnChange>
           <SiteHeader />
           {children}

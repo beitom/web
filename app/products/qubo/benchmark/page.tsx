@@ -1,10 +1,16 @@
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Card } from "@/components/ui/card"
 import { BenchmarkTable } from "@/app/products/qubo/benchmark/table"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "QUBO Solver | BEIT Inc.",
+  description: "QUBO Solver Benchmarks"
+}
 
 export default function QuboSolver() {
   return (
-    <div className="min-h-screen bg-black text-white p-8 container mt-32 max-w-6xl border rounded-lg">
+    <div className="min-h-screen bg-black text-white p-8 container mt-32 max-w-[90%] md:max-w-6xl  border rounded-lg">
       {/* QUBO Reference Solver Section */}
       <section className="mb-12">
         <h2 className="text-3xl font-mono mb-4">QUBO Reference Solver</h2>
@@ -54,7 +60,7 @@ export default function QuboSolver() {
           </Table>
         </div>
 
-        <div className="flex gap-4 mb-12 justify-center">
+        <div className="flex flex-wrap gap-4 mb-12 justify-center">
           {[
             "Establish\na problem model",
             "Map the problem\nto QUBO",
