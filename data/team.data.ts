@@ -41,14 +41,6 @@ export const boardMembers: Member[] = [
 
 export const teamMembers: Member[] = [
   {
-    name: "Adam Szady",
-    roles: ["Software Engineer"],
-    photo: "adam.szady.jpg",
-    location: "Krakow",
-    story:
-      "Adam joined BEIT during the fourth year of his studies. Always keen on learning, willing to dive deep into quantum computing, questioning more traditional approach to problem solving, added creativity to our team. He has already managed to work for Sabre as software engineer, got to Google Distributed Code Jam finals and spend 3 months as Google intern in Munich."
-  },
-  {
     name: "Marcin Briański",
     roles: ["Mathematician"],
     photo: "marcin.brianski.jpg",

@@ -17,6 +17,11 @@ import {
 
 const menuItem = [
   {
+    id: 0,
+    label: "About Us",
+    href: "/about"
+  },
+  {
     id: 1,
     label: "Products",
     href: "/products"
@@ -99,7 +104,7 @@ export function SiteHeader() {
   //   const html = document.querySelector("html")
   //   if (html) html.classList.toggle("overflow-hidden", hamburgerMenuIsOpen)
   // }, [hamburgerMenuIsOpen])
-
+  //
   // useEffect(() => {
   //   const closeHamburgerNavigation = () => setHamburgerMenuIsOpen(false)
   //   window.addEventListener("orientationchange", closeHamburgerNavigation)
@@ -244,6 +249,7 @@ export function SiteHeader() {
                     hamburgerMenuIsOpen ? "[&_a]:translate-y-0" : ""
                   }`}
                   href={item.href}
+                  onClick={() => setHamburgerMenuIsOpen(false)}
                 >
                   {item.label}
                 </Link>

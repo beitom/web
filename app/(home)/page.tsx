@@ -19,9 +19,9 @@ export default function Page() {
     viewport: { once: true, amount: 0.25 }
   }
 
-  const timelineAnimationSettings = animationSettings
-  timelineAnimationSettings.viewport = { once: true, amount: 0.05 }
-  // store a reactive variable as the scroll position
+  // const timelineAnimationSettings = animationSettings
+  // timelineAnimationSettings.viewport = { once: true, amount: 0.05 }
+  // // store a reactive variable as the scroll position
 
   return (
     <>
@@ -63,10 +63,6 @@ export default function Page() {
       {/*<motion.div {...animationSettings}>*/}
       {/*  <TechnologyGrid />*/}
       {/*</motion.div>*/}
-
-      <motion.div {...timelineAnimationSettings}>
-        <BeitTimeline />
-      </motion.div>
     </>
   )
 }
