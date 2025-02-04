@@ -8,6 +8,14 @@ import { CustomDemoButton } from "@/components/product-contact-form"
 import { BenchmarkTable } from "@/app/products/qubo/benchmark/table"
 import ProductPage, { ProductBackgroundImage } from "@/components/product-page"
 import { CheckItem } from "@/components/ui/check-item"
+import {
+  ResponsiveModal,
+  ResponsiveModalContent,
+  ResponsiveModalDescription,
+  ResponsiveModalTitle,
+  ResponsiveModalTrigger
+} from "@/components/ui/responsive-modal"
+import MoleculeSpeedupChart from "@/app/products/bdocker/chart"
 
 const productName = "BDocker"
 const features = [
@@ -19,7 +27,7 @@ const features = [
       <>
         <img src="/assets/images/products/bdocker/docking.gif" alt="protein ligand interaction" />
         {/* Placeholder figure caption */}
-        <p className="text-center text-sm text-gray-500">[Caption placeholder]</p>
+        <p className="text-center text-sm text-gray-500">Visualizing the Docking Process</p>
       </>
     ),
     content: (
@@ -58,7 +66,7 @@ const features = [
     title: "Technology",
     description:
       "BEIT has a track record of building optimized simulated annealers that outperform well-known quantum and classical solvers in the marketplace including DWAVE, QBOWL, CPLEX, and Gurobi",
-    descriptionContent: <BenchmarkTable />,
+    descriptionContent: <MoleculeSpeedupChart />,
     content: (
       <ShinyBox className="flex flex-col p-4 text-left">
         <p className="text-xl font-bold relative z-20 mt-2 text-white">Proven Performance</p>
@@ -92,9 +100,34 @@ const features = [
       "We are constantly refining our product to explore the vast chemical space of molecular fragments, returning the most promising candidates for binding to a protein pocket and supporting de novo drug design. BDocker’s public release is coming soon, available as a stand-alone licensed binary or a managed cloud solution on AWS.",
     descriptionContent: (
       <>
-        <img src="/assets/images/products/bdocker/1s38.png" alt="protein ligand interaction - 2" />
+        <ResponsiveModal>
+          <ResponsiveModalTrigger>
+            <img
+              src="/assets/images/products/bdocker/1s38.png"
+              alt="2-Amino-8-Methylquinazolin-4(3H)-One to tRNA-Guanine Transglycosylase"
+            />
+          </ResponsiveModalTrigger>
+          <ResponsiveModalContent className="max-w-3xl">
+            <ResponsiveModalTitle>
+              Docking Analysis of 2-Amino-8-Methylquinazolin-4(3H)-One with TGT: Insights into Antimicrobial Targeting
+              and Metabolic Control in Zymomonas mobilis
+            </ResponsiveModalTitle>
+            <ResponsiveModalDescription>
+              TGT is an essential enzyme involved in the modification of tRNA by incorporating queuosine, a modification
+              critical for translational fidelity. Inhibiting TGT can disrupt bacterial protein synthesis, making it a
+              promising target for antimicrobial drug design. Zymomonas mobilis, a bacterium known for its high ethanol
+              production, is studied for both biofuel applications and potential vulnerabilities to novel inhibitors.
+              The docking of 2-Amino-8-Methylquinazolin-4(3H)-One provides insights into its binding potential, aiding
+              in the development of antibacterial or metabolic control strategies.
+            </ResponsiveModalDescription>
+          </ResponsiveModalContent>
+        </ResponsiveModal>
         {/* Placeholder figure caption */}
-        <p className="text-center text-sm text-gray-500">[Caption placeholder]</p>
+        <p className="text-center text-sm text-gray-500">
+          Molecular docking of 2-Amino-8-Methylquinazolin-4(3H)-One to tRNA-Guanine Transglycosylase (TGT) in Zymomonas
+          mobilis reveals potential interactions crucial for inhibiting this enzyme, which plays a key role in bacterial
+          tRNA modification.
+        </p>
       </>
     ),
     content: (
