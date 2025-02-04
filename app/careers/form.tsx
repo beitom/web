@@ -50,15 +50,6 @@ export default function JobApplicationForm({ jobTitle, cities }: { jobTitle: str
     )
   }
 
-  // const handleFileChange = (
-  //   e: React.ChangeEvent<HTMLInputElement>,
-  //   setter: React.Dispatch<React.SetStateAction<File | null>>
-  // ) => {
-  //   if (e.target.files && e.target.files[0]) {
-  //     setter(e.target.files[0])
-  //   }
-  // }
-
   return (
     <Card className="w-full max-w-2xl mx-auto">
       <CardHeader>
