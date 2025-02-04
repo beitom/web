@@ -88,7 +88,7 @@ export const StickyScroll = ({
                     <motion.h2 className="z-20 pt-8 sm:relative text-2xl font-bold text-slate-100 sticky top-0 border-b py-3 sm:py-6 bg-black">
                       {item.title}
                     </motion.h2>
-                    <motion.p className="text-kg text-slate-300 mt-10">{item.description}</motion.p>
+                    <motion.p className="text-kg text-slate-300 mt-10 text-2xl">{item.description}</motion.p>
                     <motion.div className={cn("z-20 mt-8", contentClassName)}>
                       {item.descriptionContent ?? null}
                     </motion.div>
@@ -100,7 +100,7 @@ export const StickyScroll = ({
               })}
             </div>
           </div>
-          <div className={cn("hidden sm:block h-full w-64 rounded-md sticky top-32", contentClassName)}>
+          <div className={cn("hidden sm:block h-full w-80 rounded-md sticky top-32", contentClassName)}>
             {content[activeCard].content ?? null}
           </div>
         </motion.div>

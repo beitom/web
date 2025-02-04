@@ -15,6 +15,7 @@ import "katex/dist/katex.min.css"
 import { cn } from "@/lib/utils"
 import dynamic from "next/dynamic"
 import { LinkPreview } from "@/components/ui/link-preview"
+import Link from "next/link"
 
 const Masonry = dynamic(() => import("masonic").then((mod) => mod.Masonry), { ssr: false })
 
@@ -46,7 +47,16 @@ export default function Research() {
       <div className="mx-auto space-y-8">
         <header className="space-y-4">
           <Cover className="text-4xl font-bold">Research</Cover>
-          <p className="text-gray-400">Recent publications, presentations, and preprints.</p>
+          <p className="text-gray-400">
+            Explore the latest scientific findings from our teams. Browse BEIT’s publications, presentations, and
+            preprints.
+            <br />
+            Have questions about our research?{" "}
+            <Link href="/contact" className="text-blue-600 hover:underline">
+              Reach out
+            </Link>{" "}
+            to discuss our findings and potential collaborations.
+          </p>
           <div className="relative">
             <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-white" />
             <Input

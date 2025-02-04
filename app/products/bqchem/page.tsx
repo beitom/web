@@ -12,7 +12,13 @@ import { Check, X } from "lucide-react"
 
 import { InlineMath } from "react-katex"
 import "katex/dist/katex.min.css"
-import { Drawer, DrawerContent, DrawerDescription, DrawerTitle, DrawerTrigger } from "@/components/ui/drawer"
+import {
+  ResponsiveModal,
+  ResponsiveModalContent,
+  ResponsiveModalDescription,
+  ResponsiveModalTitle,
+  ResponsiveModalTrigger
+} from "@/components/ui/responsive-modal"
 import MoleculeDrawer from "@/components/molecule-drawer"
 import { FlipWords } from "@/components/ui/flip-words"
 
@@ -215,25 +221,25 @@ const features = [
           Use BQChem to accelerate your computational drug design process at any stage: from rapid screening of
           molecular electronic potentials to high-accuracy QM/MM simulations.
         </p>
-        <Drawer>
-          <DrawerTrigger asChild>
+        <ResponsiveModal>
+          <ResponsiveModalTrigger asChild>
             <Button className="mt-3 rounded-lg" variant="ghost">
               Learn More <ChevronRight />
             </Button>
-          </DrawerTrigger>
-          <DrawerContent className="text-center p-4 gap-4">
-            <DrawerTitle className="text-3xl">Method Comparison</DrawerTitle>
-            <DrawerDescription className="max-w-2xl container">
+          </ResponsiveModalTrigger>
+          <ResponsiveModalContent className="text-center p-4 gap-4 max-w-3xl">
+            <ResponsiveModalTitle className="text-3xl">Method Comparison</ResponsiveModalTitle>
+            <ResponsiveModalDescription className="max-w-2xl container">
               sc-BW2 is size-extensive and size-consistent, respectively. It offers a more accurate and efficient
               alternative to conventional quantum chemistry methods.
-            </DrawerDescription>
+            </ResponsiveModalDescription>
             <div className="container w-full justify-center flex">
-              <div className="max-w-4xl border rounded-lg">
+              <div className="max-w-4xl border rounded-lg overflow-x-scroll mt-2">
                 <ComparisonTable />
               </div>
             </div>
-          </DrawerContent>
-        </Drawer>
+          </ResponsiveModalContent>
+        </ResponsiveModal>
       </ShinyBox>
     )
   },

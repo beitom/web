@@ -72,7 +72,7 @@ export default function LandingPage() {
         {/*<BackgroundBeams />*/}
       </motion.div>
       <OptimizationProducts />
-      <EUFundedProjects />
+      {/*<EUFundedProjects />*/}
     </>
   )
 }
